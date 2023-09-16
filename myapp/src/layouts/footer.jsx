@@ -309,7 +309,7 @@ function Footer() {
     <div class="mt-8 border-t border-gray-100 pt-8">
       <div class="sm:flex sm:justify-between">
         <p class="text-xs text-gray-500">
-          &copy; 2022. Company Name. All rights reserved.
+          &copy; 2023. Moad Hrimech. All rights reserved.
         </p>
 
         <ul

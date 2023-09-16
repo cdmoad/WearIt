@@ -1,11 +1,18 @@
-.banner-section {
-    background-image: url('../../assets/backgrounds/elegant-men-suit-jacket-with-zip.jpg'); 
+ 
+  .banner-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the opacity (0.5) to control the darkness */
     
   }
 
- .white-text-shadow{
+ /* .white-text-shadow{
 text-shadow: 0 0 50px hsla(0, 0%, 100%, 0.932);
-}
+} */
 
 .black-text-shadow{
   text-shadow: 0 0 40px hsl(0, 0%, 0%);

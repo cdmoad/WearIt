@@ -39,46 +39,44 @@ function Header() {
             </li>
   
             <li>
+            <Link to='/collections'>
               <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
-                History
+                Collections
               </a>
+              </Link>
+            </li>
+
+            <li>
+            <Link to='/bestsellers'>
+              <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                Best Sellers
+              </a>
+              </Link>
             </li>
   
-            <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
-                Services
-              </a>
-            </li>
-  
-            <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
-                Projects
-              </a>
-            </li>
-  
-            <li>
-              <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
-                Blog
-              </a>
-            </li>
+            
           </ul>
         </nav>
   
         <div class="flex items-center gap-4">
           <div class="sm:flex sm:gap-4">
+            <Link to="/login">
             <a
               class="block rounded-md bg-custom-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-black"
-              href="/"
             >
               Login
             </a>
+            </Link>
   
-            <a
+  <Link to="/signup">
+       <a
               class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-custom-black transition hover:text-black sm:block"
               href="/"
             >
               Register
             </a>
+  </Link>
+         
 
             <a
               class="hidden rounded-md cursor-pointer transition-all hover:scale-105    py-2.5 text-sm font-medium text-custom-black   hover:text-black sm:block"

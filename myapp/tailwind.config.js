@@ -10,7 +10,9 @@ export default {
         'custom-grey': '#EDF1D6',
         'custom-green': '#609966',
         'custom-blue': '#344D67',
-        'custom-black':'#333333'
+        'custom-black':'#333333',
+        'second-color':'#F7C154',
+        'third-color':'#FF9B82',
     },
     },
     

@@ -1,7 +1,22 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import Card from './card'
 
 function Collection() {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+
+//     fetch('http://api.fakeshop-api.com/products/getAllProducts')
+// .then(res => res.json())
+// .then(json => console.log(json));
+            
+
+    fetch('https://fakestoreapi.com/products?sort=desc')
+            .then(res=>res.json())
+            .then(json=>setProducts(json))
+  }, [])
+
   return (
  
   <section>
@@ -373,16 +388,13 @@ function Collection() {
         </div>
   
         <div class="lg:col-span-3">
-          <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+          <ul class="grid gap-16 sm:grid-cols-2 lg:grid-cols-3">
+  {
+  products.map((product) => (
+    <Card title={product.title} price={product.price}  description={product.description} image={product.image}/> 
+  ))
+  }
+
           </ul>
         </div>
       </div>

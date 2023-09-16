@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Collection() {
   return (
@@ -30,11 +31,13 @@ function Collection() {
             >
               <h3 class="text-xl font-medium text-white">Casual Trainers</h3>
   
+  <Link to="/productoverview">
               <span
                 class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
               >
                 Shop Now
               </span>
+              </Link>
             </div>
           </a>
         </li>
@@ -52,11 +55,13 @@ function Collection() {
             >
               <h3 class="text-xl font-medium text-white">Winter Jumpers</h3>
   
+              <Link to="/productoverview">
               <span
                 class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
               >
                 Shop Now
               </span>
+              </Link>
             </div>
           </a>
         </li>
@@ -74,11 +79,13 @@ function Collection() {
             >
               <h3 class="text-xl font-medium text-white">Skinny Jeans Blue</h3>
   
+              <Link to="/productoverview">
               <span
                 class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
               >
                 Shop Now
               </span>
+              </Link>
             </div>
           </a>
         </li>

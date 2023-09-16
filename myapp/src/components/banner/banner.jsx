@@ -2,6 +2,7 @@ import React from 'react'
 import './banner.css';
 import {motion} from "framer-motion"
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom';
  
 function Banner({title1,title2,text,image}) {
 
@@ -57,9 +58,10 @@ function Banner({title1,title2,text,image}) {
       </p>
 
       <div class="mt-8 flex flex-wrap gap-4 text-center">
+        <Link to="/collections">
         <motion.a
           href="#"
-          class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-custom-black shadow hover:bg-custom-black focus:outline-none focus:ring active:bg-rose-500 hover:text-white sm:w-auto"
+          class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-custom-black shadow hover:bg-custom-black focus:outline-none focus:ring   hover:text-white sm:w-auto"
           initial={{y:"100px"}}
           animate={{y:"0"}}
           transition={{duration:1.3}}
@@ -67,6 +69,7 @@ function Banner({title1,title2,text,image}) {
         >
           Explore Collections
         </motion.a>
+        </Link>
 
         <motion.a
           href="#"

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import {CartContext} from '../../contexts/cartContext'
 import {motion,AnimatePresence} from "framer-motion"
+import { Link } from 'react-router-dom';
 
 
 function Cart() {
@@ -218,19 +219,24 @@ function Cart() {
     </ul>
 
     <div class="space-y-4 text-center">
+
+     <Link to='/cart'>
       <a
-        href="#"
-        class="block rounded border border-gray-600 px-5 py-3 text-sm text-gray-600 transition hover:ring-1 hover:ring-gray-400"
+        class="block rounded border border-gray-600  px-5 py-3 text-sm text-gray-600 transition hover:ring-1 hover:ring-gray-400"
+        onClick={toggleCart}
       >
         View my cart (2)
       </a>
+      </Link>
 
-      <a
-        href="#"
-        class="block rounded bg-custom-black px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+      <Link to="/checkout">
+      <a 
+        class="block rounded bg-custom-black my-2 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+        onClick={toggleCart}
       >
         Checkout
       </a>
+      </Link>
 
       <a
         href="#"

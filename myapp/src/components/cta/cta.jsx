@@ -1,6 +1,8 @@
 import React from 'react'
 import girlYellobg from "../../assets/images/caucasian-teenage-girl-yellow-background-stylish-young-woman-with-shopping-bags-hands.jpg"
 import aiHead from "../../assets/images/ai-generated-concept-human.jpg"
+import { Link } from 'react-router-dom'
+
 
 function Cta() {
   return (
@@ -20,12 +22,14 @@ function Cta() {
           
 
           <div class="mt-4 md:mt-8">
+            <Link to="/categories">
             <a
               href="#"
               class="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-custom-black transition hover:bg-transparent hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
             >
               Discover Your Style
             </a>
+            </Link>
           </div>
         </div>
       </div>

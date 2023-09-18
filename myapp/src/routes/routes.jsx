@@ -19,7 +19,8 @@ import BestSeller from '../pages/bestSeller/bestSeller';
 import Signup from '../pages/signup/signup';
 import WithHeader from './withHeader';
 import Login from '../pages/login/login';
-import Dashboard from '../pages/dashboard/seller/dashboard';
+import Dashboard from '../pages/dashboard/seller';
+import PageNotFound from '../pages/ErrorPages/pageNotFound';
 
 function Routing() {
   return (
@@ -36,9 +37,10 @@ function Routing() {
           <Route path="/checkout" element={<WithHeader><Checkout /></WithHeader>}></Route>
           <Route path="/bestsellers" element={<WithHeader><BestSeller /></WithHeader>}></Route>
           {/* Dashboard */}
-          <Route path="/dashboard" element={<Dashboard/>}></Route>
+          <Route path="/dashboard/*" element={<Dashboard/>}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/*" element={<PageNotFound />} />
         </Routes>
       </Router>
 

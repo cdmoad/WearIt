@@ -1,6 +1,8 @@
 import React from 'react'
 import Cart from '../../components/cart/cart'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 function CartPage() {
   return (
@@ -8,9 +10,9 @@ function CartPage() {
     <>
   <section>
     <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-      <div class="mx-auto max-w-3xl">
+      <div class="mx-auto max-w-3xl   p-6 rounded-2xl shadow">
         <header class="text-center">
-          <h1 class="text-xl font-bold text-gray-900 sm:text-3xl">Your Cart</h1>
+          <h1 class="text-xl font-bold text-gray-900 sm:text-3xl"><FontAwesomeIcon icon={faCartShopping} /> Your Cart </h1> 
         </header>
   
         <div class="mt-8">

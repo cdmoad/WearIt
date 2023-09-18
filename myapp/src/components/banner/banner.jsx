@@ -58,10 +58,10 @@ function Banner({title1,title2,text,image}) {
       </p>
 
       <div class="mt-8 flex flex-wrap gap-4 text-center">
-        <Link to="/collections">
+        <Link to="/collections" className='w-full sm:w-auto'>
         <motion.a
           href="#"
-          class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-custom-black shadow hover:bg-custom-black focus:outline-none focus:ring   hover:text-white sm:w-auto"
+          class="block   rounded bg-white px-12 py-3 text-sm font-medium text-custom-black shadow hover:bg-custom-black focus:outline-none focus:ring   hover:text-white sm:w-auto"
           initial={{y:"100px"}}
           animate={{y:"0"}}
           transition={{duration:1.3}}

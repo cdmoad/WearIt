@@ -149,7 +149,7 @@ function Header() {
        ><span class="">Categories</span>
      </li>
      </Link>
-     <Link to="collections">
+     <Link to="/collections">
      <li class="relative flex cursor-pointer space-x-2 rounded-md py-3 px-10 text-gray-300 hover:bg-slate-600">
        <span
          ><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -157,7 +157,7 @@ function Header() {
        ><span class="">Collections</span>
      </li>
      </Link>
-     <Link to="bestsellers">
+     <Link to="/bestsellers">
      <li class="relative flex cursor-pointer space-x-2 rounded-md py-3 px-10 text-gray-300 hover:bg-slate-600">
        <span class="text-2xl"
          ><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36">
@@ -167,7 +167,7 @@ function Header() {
        ><span class="">Best Sellers</span>
      </li>
      </Link>
-     <Link to="dashboard/statistics">
+     <Link to="/dashboard/statistics">
      <li class="relative flex cursor-pointer space-x-2 rounded-md py-3 px-10 text-gray-300 hover:bg-slate-600">
       
        <span
@@ -177,7 +177,7 @@ function Header() {
        
      </li>
      </Link>
-     <Link to="signup">
+     <Link to="/signup">
      <li class="relative flex cursor-pointer space-x-2 rounded-md py-3 px-10 text-gray-300 hover:bg-slate-600">
        <span
          ><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -185,7 +185,7 @@ function Header() {
        ><span class="">Register</span>
      </li>
      </Link>
-     <Link to="settings">
+     <Link to="/settings">
      <li class="relative flex cursor-pointer space-x-2 rounded-md py-3 px-10 text-gray-300 hover:bg-slate-600">
        <span
          ><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Suspense, lazy} from 'react'
 import {
     BrowserRouter as Router,
     Routes,
@@ -7,26 +7,52 @@ import {
   } from "react-router-dom";
 
   import Header from '../layouts/header'
+  // import Spinner from '../components/Loader/spinner'
+  import Dots from '../components/Loader/dots'
 
 import Home from '../pages/home/home'
-import Products from '../pages/products/products';
-import Categories from '../pages/categories/categories';
-import Cart from '../pages/cart/cart';
-import ProductOverview from '../pages/poroductOverview/productOverview';
-import Collection from '../pages/collection/collection';
-import Checkout from '../pages/checkout/checkout';
-import BestSeller from '../pages/bestSeller/bestSeller';
-import Signup from '../pages/signup/signup';
+
+const Products = lazy(() => import('../pages/products/products'));
+// import Products from '../pages/products/products';
+
+const Categories = lazy(() => import('../pages/categories/categories'));
+// import Categories from '../pages/categories/categories';
+
+const Cart = lazy(() => import('../pages/cart/cart'));
+// import Cart from '../pages/cart/cart';
+
+const ProductOverview = lazy(() => import('../pages/poroductOverview/productOverview'));
+// import ProductOverview from '../pages/poroductOverview/productOverview';
+
+const Collection = lazy(() => import('../pages/collection/collection'));
+// import Collection from '../pages/collection/collection';
+
+const Checkout = lazy(() => import('../pages/categories/categories'));
+// import Checkout from '../pages/checkout/checkout';
+
+const BestSeller = lazy(() => import('../pages/bestSeller/bestSeller'));
+// import BestSeller from '../pages/bestSeller/bestSeller';
+
+const Signup = lazy(() => import('../pages/signup/signup'));
+// import Signup from '../pages/signup/signup';
+
+const Login = lazy(() => import('../pages/login/login'));
+// import Login from '../pages/login/login';
+
 import WithHeader from './withHeader';
-import Login from '../pages/login/login';
-import Dashboard from '../pages/dashboard/seller';
-import PageNotFound from '../pages/ErrorPages/pageNotFound';
+
+const Dashboard = lazy(() => import('../pages/dashboard/seller'));
+// import Dashboard from '../pages/dashboard/seller';
+
+const PageNotFound = lazy(() => import('../pages/ErrorPages/pageNotFound'));
+// import PageNotFound from '../pages/ErrorPages/pageNotFound';
+
 
 function Routing() {
   return (
 
       <Router>
-       
+       <Suspense fallback={<Dots/>}>
         <Routes>
           <Route path="/" element={<WithHeader><Home/></WithHeader>}></Route>
           <Route path="/products" element={<WithHeader><Products /></WithHeader>}></Route>
@@ -42,9 +68,9 @@ function Routing() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
+       </Suspense>
       </Router>
 
-   
   )
 }
 

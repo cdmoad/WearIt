@@ -3,6 +3,8 @@ import logo from "../assets/logos/wearit-logo-2-icon.png"
 import {Link} from 'react-router-dom'
 import cart from "../assets/icons/cart.png"
 import { CartContext } from '../contexts/cartContext'
+import {motion,AnimatePresence} from 'framer-motion'
+ 
 
 function Header() {
 
@@ -26,8 +28,8 @@ function Header() {
         <img src={logo} alt="" height="50" width="50" />
       </a>
       </Link>
-      <div class="flex flex-1 items-center justify-end md:justify-between">
-        <nav aria-label="Global" class="hidden md:block">
+      <div class="flex flex-1 items-center justify-end lg:justify-between ">
+        <nav aria-label="Global" class="hidden lg:block">
           <ul class="flex items-center gap-6 text-sm">
             <li>
             <Link to='/products'>
@@ -62,6 +64,14 @@ function Header() {
             </li>
 
             <li>
+            <Link to='/about'>
+              <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                About Us
+              </a>
+            </Link>
+            </li>
+
+            <li>
             <Link to='/dashboard/statistics'>
               <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
                 Dashboard
@@ -74,7 +84,17 @@ function Header() {
         </nav>
   
         <div class="flex items-center gap-4">
-          <div class="sm:flex sm:gap-4">
+          <a
+              class="  rounded-md cursor-pointer transition-all hover:scale-105    py-2.5 text-sm font-medium text-custom-black    hover:text-black  "
+              
+              onClick={toggleCart}
+            >
+              <img src={cart} alt="" height={25} width={25}  />
+            </a>
+          <div class="sm:flex sm:gap-4">  
+          
+          
+  
             <Link to="/login">
             <a
               class="block rounded-md bg-custom-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-black"
@@ -82,7 +102,8 @@ function Header() {
               Login
             </a>
             </Link>
-  
+
+          
   <Link to="/signup">
        <a
               class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-custom-black transition hover:text-black sm:block"
@@ -93,13 +114,7 @@ function Header() {
   </Link>
          
 
-            <a
-              class="hidden rounded-md cursor-pointer transition-all hover:scale-105    py-2.5 text-sm font-medium text-custom-black   hover:text-black sm:block"
-              
-              onClick={toggleCart}
-            >
-              <img src={cart} alt="" height={22} width={22} />
-            </a>
+           
           </div>
   
           <button
@@ -126,9 +141,15 @@ function Header() {
     </div>
   </header>
 
+  <AnimatePresence>
 {toggleSideNav ? 
 (
-  <div class="min-h-screen fixed z-50 top-0 left-0" onClick={()=>setToggleSideNav(false)}>
+  <motion.div class="min-h-screen fixed z-50 top-0 left-0" onClick={()=>setToggleSideNav(false)}
+  initial={{ x:-296}}
+  animate={{ x:0}}
+  transition={{duration:0.4}}
+  exit={{x:-296}}
+  >
  
  <div class="absolute left-0 flex h-screen w-72 flex-col overflow-hidden shadow-2xl bg-custom-black text-white">
    <h1 class="mt-10 ml-10 text-3xl font-bold">WearIt</h1>
@@ -199,9 +220,10 @@ function Header() {
    
  </div>
 
-</div>
+</motion.div>
 
 ) : null}
+</AnimatePresence>
 
   
 

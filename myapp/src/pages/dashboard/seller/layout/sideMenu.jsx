@@ -1,11 +1,13 @@
 import React from 'react'
 import './sideMenu.css'
+import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 function SideMenu() {
   return (
-    <div class="min-h-screen fixed bg-gray-100">
-    <div class="h-screen w-64 ">
-    <div class="flex h-full flex-grow flex-col overflow-y-auto rounded-br-lg rounded-tr-lg bg-white pt-5 shadow-md">
+    <div class="min-h-screen fixed bg-gray-100 ">
+    <div class="h-screen w-64">
+    <div class="flex h-full flex-grow flex-col overflow-y-auto rounded-br-lg rounded-tr-lg bg-white  shadow-md pb-4">
       <div class="flex mt-10 items-center px-4">
         <img class="h-12 w-auto max-w-full align-middle rounded-full" src="https://loremflickr.com/g/240/240/paris,girl/all" width={60} height={60} alt="" />
         <div class="flex ml-3 flex-col">
@@ -27,15 +29,16 @@ function SideMenu() {
             </a>
   
   
-  
-            <a href="#" class="flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
+            <Link to="products">
+            <a   class="flex cursor-pointer items-center border-l-rose-600 py-2 px-4 text-sm font-medium text-gray-600 outline-none transition-all duration-100 ease-in-out hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600 focus:border-l-4">
               <svg class="mr-4 h-5 w-5 align-middle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
               </svg>
   
-              Messages
+              Products
               <span class="ml-auto rounded-full bg-rose-600 px-2 text-xs text-white">6</span>
             </a>
+            </Link>
   
             <div class="relative transition">
               <input class="peer hidden" type="checkbox" id="menu-1" checked />

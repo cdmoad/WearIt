@@ -47,6 +47,7 @@ const Dashboard = lazy(() => import('../pages/dashboard/seller'));
 const PageNotFound = lazy(() => import('../pages/ErrorPages/pageNotFound'));
 // import PageNotFound from '../pages/ErrorPages/pageNotFound';
 
+const AboutUs = lazy(()=> import('../pages/aboutUs/aboutUs'))
 
 function Routing() {
   return (
@@ -62,6 +63,7 @@ function Routing() {
           <Route path="/collections" element={<WithHeader><Collection /></WithHeader>}></Route>
           <Route path="/checkout" element={<WithHeader><Checkout /></WithHeader>}></Route>
           <Route path="/bestsellers" element={<WithHeader><BestSeller /></WithHeader>}></Route>
+          <Route path="/about" element={<WithHeader><AboutUs /></WithHeader>}></Route>
           {/* Dashboard */}
           <Route path="/dashboard/*" element={<Dashboard/>}></Route>
           <Route path="/signup" element={<Signup />}></Route>

@@ -5,7 +5,7 @@ function Index() {
   <>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet" />
 <div class="  bg-white">
-  <h1 class="  mb-10 ml-5 text-2xl font-bold text-gray-900">Order Management</h1>
+  <h1 class="  mb-10 ml-5 text-2xl font-bold text-gray-900">Products Management</h1>
   <div class="bg-white py-2 px-3">
     <nav class="flex flex-wrap gap-4">
       <a href="#" class="inline-flex whitespace-nowrap border-b-2 border-transparent py-2 px-3 text-sm font-medium text-gray-600 transition-all duration-200 ease-in-out hover:border-b-purple-600 hover:text-purple-600"> Account </a>
@@ -20,7 +20,7 @@ function Index() {
     </nav>
   </div>
 </div>
-<div class="w-screen bg-gray-50">
+<div class="  bg-gray-50">
   <div class="mx-auto max-w-screen-xl px-2 py-10">
     <div class="mt-4 w-full">
       <div class="flex w-full flex-col items-center justify-between space-y-2 sm:flex-row sm:space-y-0">

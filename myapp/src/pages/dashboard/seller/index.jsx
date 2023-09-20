@@ -7,9 +7,12 @@ import PageNotFound from '../../ErrorPages/pageNotFound';
 
 function Dashboard() {
   return (
-     <div>
-        <SideMenu/>
-        <div className='ml-[17rem]'>
+     <div className="flex justify-between">
+      <div >
+        <SideMenu/> 
+      </div>
+        
+        <div className=''>
          <Routes>
           <Route path="/statistics" element={ <Statistic/>} /> 
           <Route path="/products" element={ <Products/>} />  

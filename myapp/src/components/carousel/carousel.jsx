@@ -20,13 +20,13 @@ function CarouselSlider() {
   return (
     <Carousel   effect="fade" autoplay='true'>
     <div>
-    <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comfort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" image={image1}/>
+    <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comhtmlFort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" image={image1}/>
     </div>
     <div>
-    <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comfort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" image={image2}/>
+    <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comhtmlFort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" image={image2}/>
     </div>
     <div>
-     <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comfort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" image={image3}/>
+     <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comhtmlFort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" image={image3}/>
     </div>
    
   </Carousel>

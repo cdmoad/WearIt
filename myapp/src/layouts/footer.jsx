@@ -4,178 +4,178 @@ import logo from "../assets/logos/wearit-logo2.png"
 function Footer() {
   return (
  
-<footer class="bg-white">
-  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="lg:flex lg:items-start lg:gap-8">
-      <div class="text-teal-600">
+<footer className="bg-white">
+  <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="lg:flex lg:items-start lg:gap-8">
+      <div className="text-teal-600">
       <img src={logo} alt="" height="190" width="190" />
       </div>
 
       <div
-        class="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16"
+        className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16"
       >
-        <div class="col-span-2">
+        <div className="col-span-2">
           <div>
-            <h2 class="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-gray-900">
               Get the latest news!
             </h2>
 
-            <p class="mt-4 text-gray-500">
+            <p className="mt-4 text-gray-500">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
               cupiditate quae nam molestias.
             </p>
           </div>
         </div>
 
-        <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-          <form class="w-full">
-            <label for="UserEmail" class="sr-only"> Email </label>
+        <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+          <htmlForm className="w-full">
+            <label htmlFor="UserEmail" className="sr-only"> Email </label>
 
             <div
-              class="border border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4"
+              className="border border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4"
             >
               <input
                 type="email"
                 id="UserEmail"
                 placeholder="john@rhcp.com"
-                class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+                className="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
               />
 
               <button
-                class="mt-1 w-full bg-custom-black px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0"
+                className="mt-1 w-full bg-custom-black px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0"
               >
                 Sign Up
               </button>
             </div>earIt
-          </form>
+          </htmlForm>
         </div>
 
-        <div class="col-span-2 sm:col-span-1">
-          <p class="font-medium text-gray-900">Services</p>
+        <div className="col-span-2 sm:col-span-1">
+          <p className="font-medium text-gray-900">Services</p>
 
-          <ul class="mt-6 space-y-4 text-sm">
+          <ul className="mt-6 space-y-4 text-sm">
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 1on1 Coaching
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Company Review
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Accounts Review
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 HR Consulting
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 SEO Optimisation
               </a>
             </li>
           </ul>
         </div>
 
-        <div class="col-span-2 sm:col-span-1">
-          <p class="font-medium text-gray-900">Company</p>
+        <div className="col-span-2 sm:col-span-1">
+          <p className="font-medium text-gray-900">Company</p>
 
-          <ul class="mt-6 space-y-4 text-sm">
+          <ul className="mt-6 space-y-4 text-sm">
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 About
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Meet the Team
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Accounts Review
               </a>
             </li>
           </ul>
         </div>
 
-        <div class="col-span-2 sm:col-span-1">
-          <p class="font-medium text-gray-900">Helpful Links</p>
+        <div className="col-span-2 sm:col-span-1">
+          <p className="font-medium text-gray-900">Helpful Links</p>
 
-          <ul class="mt-6 space-y-4 text-sm">
+          <ul className="mt-6 space-y-4 text-sm">
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Contact
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 FAQs
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Live Chat
               </a>
             </li>
           </ul>
         </div>
 
-        <div class="col-span-2 sm:col-span-1">
-          <p class="font-medium text-gray-900">Legal</p>
+        <div className="col-span-2 sm:col-span-1">
+          <p className="font-medium text-gray-900">Legal</p>
 
-          <ul class="mt-6 space-y-4 text-sm">
+          <ul className="mt-6 space-y-4 text-sm">
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Accessibility
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Returns Policy
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Refund Policy
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Hiring Statistics
               </a>
             </li>
           </ul>
         </div>
 
-        <div class="col-span-2 sm:col-span-1">
-          <p class="font-medium text-gray-900">Downloads</p>
+        <div className="col-span-2 sm:col-span-1">
+          <p className="font-medium text-gray-900">Downloads</p>
 
-          <ul class="mt-6 space-y-4 text-sm">
+          <ul className="mt-6 space-y-4 text-sm">
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 Marketing Calendar
               </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75">
+              <a href="#" className="text-gray-700 transition hover:opacity-75">
                 SEO Infographics
               </a>
             </li>
@@ -183,19 +183,19 @@ function Footer() {
         </div>
 
         <ul
-          class="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end"
+          className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end"
         >
           <li>
             <a
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75"
+              className="text-gray-700 transition hover:opacity-75"
             >
-              <span class="sr-only">Facebook</span>
+              <span className="sr-only">Facebook</span>
 
               <svg
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -214,12 +214,12 @@ function Footer() {
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75"
+              className="text-gray-700 transition hover:opacity-75"
             >
-              <span class="sr-only">Instagram</span>
+              <span className="sr-only">Instagram</span>
 
               <svg
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -238,12 +238,12 @@ function Footer() {
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75"
+              className="text-gray-700 transition hover:opacity-75"
             >
-              <span class="sr-only">Twitter</span>
+              <span className="sr-only">Twitter</span>
 
               <svg
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -260,12 +260,12 @@ function Footer() {
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75"
+              className="text-gray-700 transition hover:opacity-75"
             >
-              <span class="sr-only">GitHub</span>
+              <span className="sr-only">GitHub</span>
 
               <svg
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -284,12 +284,12 @@ function Footer() {
               href="/"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-700 transition hover:opacity-75"
+              className="text-gray-700 transition hover:opacity-75"
             >
-              <span class="sr-only">Dribbble</span>
+              <span className="sr-only">Dribbble</span>
 
               <svg
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -306,29 +306,29 @@ function Footer() {
       </div>
     </div>
 
-    <div class="mt-8 border-t border-gray-100 pt-8">
-      <div class="sm:flex sm:justify-between">
-        <p class="text-xs text-gray-500">
+    <div className="mt-8 border-t border-gray-100 pt-8">
+      <div className="sm:flex sm:justify-between">
+        <p className="text-xs text-gray-500">
           &copy; 2023. Moad Hrimech. All rights reserved.
         </p>
 
         <ul
-          class="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end"
+          className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end"
         >
           <li>
-            <a href="#" class="text-gray-500 transition hover:opacity-75">
+            <a href="#" className="text-gray-500 transition hover:opacity-75">
               Terms & Conditions
             </a>
           </li>
 
           <li>
-            <a href="#" class="text-gray-500 transition hover:opacity-75">
+            <a href="#" className="text-gray-500 transition hover:opacity-75">
               Privacy Policy
             </a>
           </li>
 
           <li>
-            <a href="#" class="text-gray-500 transition hover:opacity-75">
+            <a href="#" className="text-gray-500 transition hover:opacity-75">
               Cookies
             </a>
           </li>

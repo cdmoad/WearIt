@@ -12,48 +12,50 @@ import {
 
 import Home from '../pages/home/home'
 
-const Products = lazy(() => import('../pages/products/products'));
-// import Products from '../pages/products/products';
+// const Products = lazy(() => import('../pages/products/products'));
+import Products from '../pages/products/products';
 
-const Categories = lazy(() => import('../pages/categories/categories'));
-// import Categories from '../pages/categories/categories';
+// const Categories = lazy(() => import('../pages/categories/categories'));
+import Categories from '../pages/categories/categories';
 
-const Cart = lazy(() => import('../pages/cart/cart'));
-// import Cart from '../pages/cart/cart';
+// const Cart = lazy(() => import('../pages/cart/cart'));
+import Cart from '../pages/cart/cart';
 
-const ProductOverview = lazy(() => import('../pages/poroductOverview/productOverview'));
-// import ProductOverview from '../pages/poroductOverview/productOverview';
+// const ProductOverview = lazy(() => import('../pages/poroductOverview/productOverview'));
+import ProductOverview from '../pages/poroductOverview/productOverview';
 
-const Collection = lazy(() => import('../pages/collection/collection'));
-// import Collection from '../pages/collection/collection';
+// const Collection = lazy(() => import('../pages/collection/collection'));
+import Collection from '../pages/collection/collection';
 
-const Checkout = lazy(() => import('../pages/categories/categories'));
-// import Checkout from '../pages/checkout/checkout';
+// const Checkout = lazy(() => import('../pages/categories/categories'));
+import Checkout from '../pages/checkout/checkout';
 
-const BestSeller = lazy(() => import('../pages/bestSeller/bestSeller'));
-// import BestSeller from '../pages/bestSeller/bestSeller';
+// const BestSeller = lazy(() => import('../pages/bestSeller/bestSeller'));
+import BestSeller from '../pages/bestSeller/bestSeller';
 
-const Signup = lazy(() => import('../pages/signup/signup'));
-// import Signup from '../pages/signup/signup';
+// const Signup = lazy(() => import('../pages/signup/signup'));
+import Signup from '../pages/signup/signup';
 
-const Login = lazy(() => import('../pages/login/login'));
-// import Login from '../pages/login/login';
+// const Login = lazy(() => import('../pages/login/login'));
+import Login from '../pages/login/login';
 
 import WithHeader from './withHeader';
 
-const Dashboard = lazy(() => import('../pages/dashboard/seller'));
-// import Dashboard from '../pages/dashboard/seller';
+// const Dashboard = lazy(() => import('../pages/dashboard/seller'));
+import Dashboard from '../pages/dashboard/seller';
 
-const PageNotFound = lazy(() => import('../pages/ErrorPages/pageNotFound'));
-// import PageNotFound from '../pages/ErrorPages/pageNotFound';
+// const PageNotFound = lazy(() => import('../pages/ErrorPages/pageNotFound'));
+import PageNotFound from '../pages/ErrorPages/pageNotFound';
 
-const AboutUs = lazy(()=> import('../pages/aboutUs/aboutUs'))
+// const AboutUs = lazy(()=> import('../pages/aboutUs/aboutUs'));
+import AboutUs from '../pages/aboutUs/aboutUs';
+
 
 function Routing() {
   return (
 
       <Router>
-       <Suspense fallback={<Dots/>}>
+       {/* <Suspense fallback={<Dots/>}> */}
         <Routes>
           <Route path="/" element={<WithHeader><Home/></WithHeader>}></Route>
           <Route path="/products" element={<WithHeader><Products /></WithHeader>}></Route>
@@ -70,7 +72,7 @@ function Routing() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
-       </Suspense>
+       {/* </Suspense> */}
       </Router>
 
   )

@@ -1,6 +1,8 @@
 import React from 'react'
 import Cart from '../../components/cart/cart'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
  
 
 function CartPage() {

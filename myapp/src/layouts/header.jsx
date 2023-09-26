@@ -118,7 +118,7 @@ function Header() {
           </div>
   
           <button
-            onClick={()=>setToggleSideNav(!toggleSideNav)} className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+            onClick={()=>setToggleSideNav(!toggleSideNav)} className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 lg:hidden"
           >
             <span className="sr-only">Toggle menu</span>
             <svg

@@ -42,13 +42,15 @@ import Login from '../pages/login/login';
 import WithHeader from './withHeader';
 
 // const Dashboard = lazy(() => import('../pages/dashboard/seller'));
-import Dashboard from '../pages/dashboard/seller';
+import DashboardSeller from '../pages/dashboard/seller';
 
 // const PageNotFound = lazy(() => import('../pages/ErrorPages/pageNotFound'));
 import PageNotFound from '../pages/ErrorPages/pageNotFound';
 
 // const AboutUs = lazy(()=> import('../pages/aboutUs/aboutUs'));
 import AboutUs from '../pages/aboutUs/aboutUs';
+
+import DashboardAdmin from '../pages/dashboard/admin';
 
 
 function Routing() {
@@ -60,14 +62,14 @@ function Routing() {
           <Route path="/" element={<WithHeader><Home/></WithHeader>}></Route>
           <Route path="/products" element={<WithHeader><Products /></WithHeader>}></Route>
           <Route path="/categories" element={<WithHeader><Categories /></WithHeader>}></Route>
-          <Route path="/cart" element={<WithHeader><Cart /></WithHeader>}></Route>
+          <Route path="/cart" element={<WithHeader><Cart/></WithHeader>}></Route>
           <Route path="/productOverview" element={<WithHeader><ProductOverview /></WithHeader>}></Route>
           <Route path="/collections" element={<WithHeader><Collection /></WithHeader>}></Route>
           <Route path="/checkout" element={<WithHeader><Checkout /></WithHeader>}></Route>
           <Route path="/bestsellers" element={<WithHeader><BestSeller /></WithHeader>}></Route>
           <Route path="/about" element={<WithHeader><AboutUs /></WithHeader>}></Route>
           {/* Dashboard */}
-          <Route path="/dashboard/*" element={<Dashboard/>}></Route>
+          <Route path="/dashboard/*" element={<DashboardAdmin/>}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/*" element={<PageNotFound />} />

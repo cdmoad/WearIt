@@ -6,6 +6,7 @@ import {
     Outlet,
   } from "react-router-dom";
 
+   
   import Header from '../layouts/header'
   // import Spinner from '../components/Loader/spinner'
   import Dots from '../components/Loader/dots'
@@ -51,6 +52,7 @@ const PageNotFound = lazy(() => import('../pages/ErrorPages/pageNotFound'));
 function Routing() {
   return (
 
+     
       <Router>
        <Suspense fallback={<Dots/>}>
         <Routes>
@@ -70,6 +72,8 @@ function Routing() {
         </Routes>
        </Suspense>
       </Router>
+     
+    
 
   )
 }

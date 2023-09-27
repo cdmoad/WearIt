@@ -1,11 +1,22 @@
 import React from 'react'
 import './login.css'
 import { Link } from 'react-router-dom'
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import {validationSchema} from "./validation/schema"
 
 function Login() {
+
+  const { handleSubmit, control, formState: { errors } } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
  
   return (
-    <div class="flex min-h-screen w-screen   items-center justify-center text-gray-600 bg-gray-50">
+    <div class="flex min-h-screen w-screen   items-center justify-center text-gray-600 "  >
   <div class="relative">
     
 <div class="hidden sm:block h-56 w-56 text-custom-black absolute a-z-10 -left-20 -top-20">
@@ -27,10 +38,17 @@ function Login() {
         <h4 class="mb-2 font-medium text-gray-700 xl:text-xl">Welcome to WearIt!</h4>
         <p class="mb-6 text-gray-500">Please sign-in to access your account</p>
 
-        <form id="" class="mb-4" action="#" method="POST">
+        <form id="" class="mb-4" onSubmit={handleSubmit(onSubmit)}>
           <div class="mb-4">
-            <label for="email" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Email or Username</label>
-            <input type="text" class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" id="email" name="email-username" placeholder="Enter your email or username" autofocus="" />
+            <label for="email" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Email</label>
+            <Controller
+          name="email"
+          control={control}
+          defaultValue=""
+          render={({ field }) =><input  {...field} type="text" class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"   placeholder="Enter your email" autofocus="" />
+ }
+        />
+        {errors.email && <p className='text-red-500 text-sm'>{errors.email.message}</p>}
           </div>
           <div class="mb-4">
             <div class="flex justify-between">
@@ -40,8 +58,18 @@ function Login() {
               </a>
             </div>
             <div class="relative flex w-full flex-wrap items-stretch">
-              <input type="password" id="password" class="relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" name="password" placeholder="············" />
+            
+            <Controller
+          name="password"
+          control={control}
+          defaultValue=""
+          render={({ field }) =><input {...field} type="password"   class="relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"  placeholder="············" />
+
+ }
+        />
+        
             </div>
+            {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
           </div>
           <div class="mb-4">
             <div class="block">
@@ -53,10 +81,8 @@ function Login() {
             </div>
           </div>
           <div class="mb-4">
-          <Link to="/">
             <button class="grid w-full cursor-pointer select-none rounded-md border   bg-custom-black py-2 px-5 text-center align-middle text-sm text-white shadow   hover:bg-black hover:text-white   focus:text-white focus:shadow-none" 
             type="submit">Sign in</button>
-            </Link>
           </div>
         </form>
 

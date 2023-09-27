@@ -9,9 +9,11 @@ function App() {
  
   return (
     <>
+ 
     <CartProvider>
     <Route/>
     </CartProvider>
+ 
     </>
   )
 }

@@ -19,10 +19,13 @@ function App() {
   return (
     <>
  
+ <QueryClientProvider client={queryClient}> 
     <CartProvider>
     <Route/>
     </CartProvider>
- 
+    <ReactQueryDevtools initialIsOpen={false} />
+
+  </QueryClientProvider>
     </>
   )
 }

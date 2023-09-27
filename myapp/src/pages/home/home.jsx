@@ -13,7 +13,7 @@ function Home() {
     <>
 
 
-    {/* <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comfort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" /> */}
+    {/* <Banner title1="WearIt" title2="Shop the Latest Trends" text="Welcome to our fashion store, where style meets comhtmlFort! Explore our collection, from classics to trends. Discover clothing that looks great and feels amazing. Start your style journey today!" /> */}
     <CarouselSlider/>
     <Cta/>
     {/* <CardSection/> */}

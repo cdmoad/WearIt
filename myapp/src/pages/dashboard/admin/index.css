@@ -1,0 +1,11 @@
+.main-dashboard{
+    width: calc(100% - 256px);
+}
+
+.space-taker{
+width:256px;
+height: 100vh;
+
+
+
+}

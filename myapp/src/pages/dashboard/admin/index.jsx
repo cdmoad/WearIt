@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import SideMenu from './layout/sideMenu'
 import Users from './users/users'
 import { Routes, Route } from 'react-router-dom'
@@ -9,17 +9,24 @@ import './index.css'
 
 
 function Index() {
+ 
+  const [toggleMenu,setToggleMenu]=useState(false);
+ 
+
+
+
   return (
     <div className=" ">
-    <div >
-      <SideMenu/> 
-    </div>
+ 
+      <SideMenu  toggleMenu={toggleMenu}  setToggleMenu={setToggleMenu} /> 
+  
    
       <div className='flex justify-between'>
        
-         <div className='space-taker'></div>
-        <div  className="main-dashboard" > 
-         <Header/>
+       {toggleMenu ?  <div className='space-taker none md:block'></div> : null }
+
+        <div  className={`main-dashboard ${toggleMenu ? null : 'w-full' }  `} > 
+         <Header toggleMenu={toggleMenu}  setToggleMenu={setToggleMenu} />
          <div className="px-4 py-4 ">
           <Routes>
         <Route path="/users" element={ <Users/>} />   

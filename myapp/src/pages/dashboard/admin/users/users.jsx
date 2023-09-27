@@ -1,11 +1,101 @@
 import React from 'react'
+import {useGetUsers} from '../../../../queries/usersQuery'
 
 function Users() {
-  return (
-    <div>Users management here
 
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero provident totam, obcaecati dolorem eos nulla consequatur non unde cum distinctio pariatur beatae, quia sint. Incidunt, hic. Est labore porro eveniet amet animi itaque molestias tempore, reiciendis, temporibus laborum doloribus dignissimos fuga atque numquam quod nulla! Doloremque quidem tempora aperiam maxime, illum ullam libero voluptates vitae nisi repudiandae optio quaerat ducimus tenetur, quam ipsum nesciunt voluptas rem, laudantium repellat commodi. Enim, sequi aspernatur et delectus similique assumenda laudantium in accusantium repellendus rem quis, commodi maxime ratione sapiente neque ducimus dolorem excepturi eum corporis porro deleniti. Corporis laboriosam dolorem deleniti suscipit porro inventore ullam architecto dolorum itaque rerum amet iste iure quasi tempora debitis, doloribus enim dignissimos harum, fugiat cum consequatur beatae excepturi error possimus? Sapiente sint error soluta molestiae quas perspiciatis nobis saepe earum enim dignissimos! Accusantium magni quaerat distinctio assumenda, fugiat non delectus expedita incidunt! Ipsum exercitationem illo accusamus in cum. Aperiam consequatur obcaecati modi adipisci beatae quod fuga labore veritatis quos eaque, temporibus unde illum suscipit distinctio sint natus aliquam architecto odit sit nobis odio magni itaque tenetur corrupti. Unde iure, assumenda dignissimos perspiciatis in id voluptates magnam earum reprehenderit dicta pariatur hic iusto velit quam ipsum. Similique, sapiente consequuntur molestias dignissimos tenetur alias repellendus libero at ipsum nihil distinctio ratione nemo optio molestiae assumenda placeat commodi fuga error vel maxime eveniet, architecto voluptatem. Tempore voluptatum, error eos, voluptate nesciunt nemo quae nam qui quis nulla quod quaerat quos ratione accusantium dolore quas facere sint assumenda ut nobis esse asperiores laborum. Fuga numquam fugiat sequi soluta labore asperiores repellat sint ab accusamus, hic inventore fugit cumque corrupti rem odio? Vero dolore deleniti, dolor architecto at natus nihil iste iusto laborum culpa corrupti aspernatur cumque ipsam ducimus itaque doloribus placeat quisquam porro vel ex voluptate quo veritatis obcaecati! Excepturi architecto, sapiente doloribus rerum eum soluta eveniet error tempore nisi rem aliquam aperiam odit facere doloremque aspernatur culpa unde iste, ut fugit dolorem officiis atque? Nesciunt, magnam nostrum, accusamus praesentium iste corrupti optio mollitia aut, neque necessitatibus non nobis aperiam nisi est delectus ut maxime illo consectetur sed consequatur dolorum earum iure! Enim deleniti ut quo quia qui iure fuga illo ex laboriosam sapiente sequi a quos soluta autem perferendis animi, culpa necessitatibus atque sed! Itaque incidunt eveniet dignissimos modi distinctio velit hic minima ullam tenetur similique rerum atque neque voluptatibus suscipit, ab debitis asperiores ducimus et porro aperiam rem nisi? Aperiam tempora velit obcaecati sequi sint reiciendis voluptatem incidunt, doloribus libero, dolor quis ex eligendi ratione, aspernatur ab alias repudiandae enim minima. Dolore libero corrupti quam ipsa neque praesentium, iure optio at quibusdam id rerum. Nulla tempora commodi quo, neque unde perferendis accusamus eaque distinctio voluptate voluptatem repudiandae dignissimos non sit in, deserunt cumque temporibus natus itaque facilis voluptatum? Saepe libero cupiditate illum quasi aut exercitationem dolor! Delectus nostrum consectetur nobis consequuntur natus atque aliquam error aliquid rem voluptatem. Placeat totam delectus nulla ipsa. Unde amet ab dolores fugiat facilis, quae esse, explicabo cum aperiam, repudiandae maxime aut quia. Optio est numquam dicta! Iusto, quos temporibus? Asperiores perferendis facere, exercitationem possimus aperiam aliquid soluta aspernatur doloremque illo temporibus ea debitis est sit architecto doloribus adipisci ut dicta quod voluptatibus sed repellendus quidem numquam esse. Ut laboriosam, vitae officia earum molestiae incidunt aliquam ipsum sed vero rem facilis quo nulla deserunt ullam. Ea illo ducimus veniam. Harum, esse temporibus! Consequatur ea neque cumque laborum nulla eos voluptates nemo magni perferendis deserunt ipsum et, dolores, vel suscipit necessitatibus. Iure assumenda ab dolore, dolor temporibus ex ullam voluptas ipsum placeat nemo cum minus id expedita sed ratione, architecto obcaecati quia distinctio. Consequatur incidunt vero vitae, aliquid nesciunt nisi ipsum, nam neque, quaerat unde praesentium quisquam! Sunt ullam, exercitationem cupiditate voluptatum expedita ipsa architecto perferendis similique, impedit est voluptate. Repudiandae aliquam ducimus nisi! Qui totam laborum impedit eius perspiciatis eum perferendis eveniet praesentium, nulla laboriosam libero hic natus reprehenderit similique et nisi error. Est odit dignissimos ipsa dolorum. Provident officiis eius laudantium mollitia debitis, delectus vero, natus optio explicabo nam sunt quibusdam esse alias accusamus ducimus molestias? Nobis facilis repellendus nam corporis unde voluptatum soluta? Eveniet aut quas autem, ipsam quasi in. Necessitatibus veniam corrupti blanditiis labore voluptas! Voluptate omnis eius unde adipisci, fugit aspernatur excepturi iusto quidem ex modi nihil repudiandae assumenda repellendus molestiae ducimus nostrum soluta ipsum quo totam non fugiat. Aspernatur deserunt id fuga neque odio, culpa quo. Voluptas quos voluptatem quia impedit, vitae officiis corrupti exercitationem cumque eum eaque facilis! Quia odit perferendis voluptates eaque qui fugiat neque atque, inventore, a et, molestiae quod quaerat ratione nobis temporibus reiciendis nostrum aliquid excepturi sequi dignissimos veritatis! Numquam libero natus beatae est veniam quidem inventore quisquam sapiente, nulla quos porro a! Eveniet temporibus repellendus sit quae consectetur mollitia quas esse quos labore, cumque tempora ea rerum. Sed tenetur in dignissimos ducimus qui voluptatum officia nostrum? Optio harum hic molestiae qui, adipisci tempore? Aspernatur reiciendis ipsum nulla, amet voluptas maxime ducimus molestiae tempore illum doloremque minima quidem qui natus quas numquam error in, esse autem nostrum. Beatae, veritatis voluptatem! Error, assumenda beatae corrupti, ea nisi deleniti, repellendus ducimus incidunt eveniet dignissimos quas odio repellat nemo! Tempore aliquam non velit! Quasi mollitia quam blanditiis alias consectetur eaque! Magnam blanditiis rem temporibus similique distinctio repellat corrupti ipsum facilis, dolorem quidem commodi velit. Eum debitis, architecto ipsum possimus est quae? Atque debitis nostrum voluptas quos esse itaque exercitationem sit, sequi illo dolorum optio distinctio. Nesciunt, adipisci!
+  const { data:users, isFetching, isError,isSuccess } = useGetUsers()
+
+  
+
+  return (
+    <div> 
+ 
+<div class="mx-auto mt-4 max-w-screen-2xl px-2">
+  <div class="sm:flex sm:items-center sm:justify-between flex-col sm:flex-row sticky top-14 p-2 rounded-t-md border  shadow bg-white">
+
+  <div class="flex justify-center items-center z-[-1] mr-2">
+    <form   class="max-w-[280px]  ">
+        <div class="relative">
+            <input type="text" name="q" class="w-full border h-10 shadow-sm px-4 pr-10 rounded-2xl outline-none" placeholder="search" />
+            <button type="submit">
+                <svg class="text-custom-red h-4 w-5   absolute top-3 right-3 fill-current"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    x="0px" y="0px" viewBox="0 0 56.966 56.966"
+                   >
+                    <path
+                        d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z">
+                    </path>
+                </svg>
+        </button>
+        </div>
+    </form>
+  </div>
+
+    
+
+    <div class="mt-4 sm:mt-0">
+      <div class="flex items-center justify-start sm:justify-end">
+        <div class="flex items-center">
+          <label for="" class="mr-3 flex-shrink-0 text-sm font-medium text-gray-900"> Sort by: </label>
+          <select name="" class="sm: mr-4 block w-full whitespace-pre rounded-lg border p-1  py-2  pr-10 text-base outline-none focus:shadow sm:text-sm">
+            <option class="whitespace-no-wrap text-sm">Client</option>
+            <option class="whitespace-no-wrap text-sm">Seller</option>
+            <option class="whitespace-no-wrap text-sm">Admin</option>
+          </select>
+        </div>
+
+        <button type="button" class="inline-flex cursor-pointer items-center rounded-lg border border-gray-400 bg-white py-2 px-3 text-center text-sm font-medium text-gray-800 shadow hover:bg-gray-100 focus:shadow">
+          <svg class="mr-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" class=""></path>
+          </svg>
+          Export to CSV
+        </button>
+      </div>
     </div>
+  </div>
+
+  <div class="mt-1 overflow-hidden rounded-b-xl border shadow">
+    <table class="min-w-full border-separate border-spacing-y-2 border-spacing-x-2">
+      <thead class="hidden border-b lg:table-header-group">
+        <tr class="">
+          <td width="30%" class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Username</td>
+
+          <td class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Email</td>
+
+          <td class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Joined In</td>
+
+          <td class="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">Status</td>
+        </tr>
+      </thead>
+
+      <tbody class="lg:border-gray-300">
+        {isSuccess ? users.map((user)=>(
+          <tr class="">
+          <td width="50%" class="whitespace-no-wrap py-3 text-sm font-bold text-gray-900 sm:px-6">
+            {user.username}  
+          </td>
+
+          <td class="whitespace-no-wrap hidden  py-3 text-sm font-normal text-gray-500 sm:px-6 lg:table-cell">{user.email}</td>
+
+          <td class="whitespace-no-wrap  py-3 px-6 text-right text-sm text-gray-600 lg:text-left">
+             {user.joinedIn}
+          </td>
+
+          <td class="whitespace-no-wrap hidden py-3 text-sm font-normal text-gray-500 sm:px-6 lg:table-cell">
+            <div class={`inline-flex items-center rounded-full ${user.status.toLowerCase() == 'client' ? 'bg-blue-600' : 'bg-custom-red'}    py-2 px-3 text-xs text-white`}>{user.status}</div>
+          </td>
+
+        </tr>
+        )) : null}
+      
+
+       
+      </tbody>
+    </table>
+  </div>
+</div>
+
+     </div>
   )
 }
 

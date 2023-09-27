@@ -13,6 +13,7 @@ export default {
         'custom-black':'#333333',
         'second-color':'#F7C154',
         'third-color':'#FF9B82',
+        'custom-red':'#e11d48',
     },
     },
     

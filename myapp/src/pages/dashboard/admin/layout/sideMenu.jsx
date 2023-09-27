@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './sideMenu.css'
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
+ 
 
 
-function SideMenu() {
+function SideMenu({toggleMenu,setToggleMenu}) {
+
+// const [toggle,setToggle]=useState(true)
+
   return (
     <div className="min-h-screen fixed bg-gray-100 ">
-    <div className="h-screen w-64">
-    <div className="flex h-full flex-grow flex-col overflow-y-auto    bg-white  shadow-md pb-4">
+    <div className={`h-screen ${toggleMenu ? 'w-64' : 'w-0'}  `}>
+    <div className="flex h-full flex-grow flex-col overflow-y-auto bg-white  shadow-md pb-4">
       <div className="flex mt-10 items-center px-4">
         <img className="h-12 w-auto max-w-full align-middle rounded-full" src="https://loremflickr.com/g/240/240/paris,girl/all" width={60} height={60} alt="" />
         <div className="flex ml-3 flex-col">

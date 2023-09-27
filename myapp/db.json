@@ -1,0 +1,108 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+    "users": [
+      {
+        "username": "JohnDoe",
+        "email": "johndoe@example.com",
+        "status": "Seller",
+        "joinedIn": "2022-03-15"
+      },
+      {
+        "username": "AliceSmith",
+        "email": "alicesmith@example.com",
+        "status": "Client",
+        "joinedIn": "2021-08-10"
+      },
+      {
+        "username": "BobJohnson",
+        "email": "bobjohnson@example.com",
+        "status": "Client",
+        "joinedIn": "2022-01-22"
+      },
+      {
+        "username": "EmilyDavis",
+        "email": "emilydavis@example.com",
+        "status": "Client",
+        "joinedIn": "2020-11-05"
+      },
+      {
+        "username": "MichaelBrown",
+        "email": "michaelbrown@example.com",
+        "status": "Client",
+        "joinedIn": "2021-04-18"
+      },
+      {
+        "username": "OliviaWilson",
+        "email": "oliviawilson@example.com",
+        "status": "Client",
+        "joinedIn": "2022-02-28"
+      },
+      {
+        "username": "JamesMiller",
+        "email": "jamesmiller@example.com",
+        "status": "Seller",
+        "joinedIn": "2022-06-12"
+      },
+      {
+        "username": "SophiaJones",
+        "email": "sophiajones@example.com",
+        "status": "Client",
+        "joinedIn": "2021-12-07"
+      },
+      {
+        "username": "DanielMartinez",
+        "email": "danielmartinez@example.com",
+        "status": "Seller",
+        "joinedIn": "2020-09-03"
+      },
+      {
+        "username": "AvaHernandez",
+        "email": "avahernandez@example.com",
+        "status": "Client",
+        "joinedIn": "2021-05-19"
+      },
+      {
+        "username": "WilliamGarcia",
+        "email": "williamgarcia@example.com",
+        "status": "Client",
+        "joinedIn": "2020-12-30"
+      },
+      {
+        "username": "EmmaRodriguez",
+        "email": "emmarodriguez@example.com",
+        "status": "Client",
+        "joinedIn": "2021-07-14"
+      },
+      {
+        "username": "LiamLopez",
+        "email": "liamlopez@example.com",
+        "status": "Client",
+        "joinedIn": "2022-05-03"
+      },
+      {
+        "username": "MiaGonzalez",
+        "email": "miagonzalez@example.com",
+        "status": "Client",
+        "joinedIn": "2022-05-03"
+      }
+    ]
+  
+  
+  }
+  

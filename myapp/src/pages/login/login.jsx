@@ -3,7 +3,7 @@ import './login.css'
 import { Link } from 'react-router-dom'
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import {validationSchema} from "./validation/schema"
+import {validationSchema} from "../../validation/login"
 
 function Login() {
 

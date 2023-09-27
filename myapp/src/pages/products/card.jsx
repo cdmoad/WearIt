@@ -7,7 +7,7 @@ function Card({title, price, image,description}) {
       <img
         src={image}
         alt=""
-        className="h-[350px] w-full object-contain transition duration-500 group-hover:scale-105 sm:h-[450px]"
+        className="h-[260px] w-full object-contain transition duration-500 group-hover:scale-105 "
       />
 
       <div className="relative bg-white pt-3">
@@ -20,7 +20,7 @@ function Card({title, price, image,description}) {
         <p className="mt-2">
           <span className="sr-only"> {description}</span>
 
-          <span className="tracking-wider text-gray-900"> £{price} </span>
+          <span className="tracking-wider text-gray-900"> {price}DH </span>
         </p>
       </div>
     </a>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Card({title, price, image,description}) {
+function Card({title, price, image}) {
   return (
     <li>
     <Link to="/product/10" className="group block overflow-hidden">
@@ -19,8 +19,7 @@ function Card({title, price, image,description}) {
         </h3>
 
         <p className="mt-2">
-          <span className="sr-only"> {description}</span>
-
+          <span className="">  </span>
           <span className="tracking-wider text-gray-900"> {price}DH </span>
         </p>
       </div>

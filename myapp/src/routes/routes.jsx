@@ -65,7 +65,7 @@ function Routing() {
           <Route path="/products" element={<WithHeader><Products /></WithHeader>}></Route>
           <Route path="/categories" element={<WithHeader><Categories /></WithHeader>}></Route>
           <Route path="/cart" element={<WithHeader><Cart/></WithHeader>}></Route>
-          <Route path="/productOverview" element={<WithHeader><ProductOverview /></WithHeader>}></Route>
+          <Route path="/product/:id" element={<WithHeader><ProductOverview /></WithHeader>}></Route>
           <Route path="/collections" element={<WithHeader><Collection /></WithHeader>}></Route>
           <Route path="/checkout" element={<WithHeader><Checkout /></WithHeader>}></Route>
           <Route path="/bestsellers" element={<WithHeader><BestSeller /></WithHeader>}></Route>

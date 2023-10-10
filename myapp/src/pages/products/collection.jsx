@@ -401,7 +401,7 @@ function Collection() {
     )
     :
     products.map((product) => (
-    <Card key={product.id}  title={product.title} price={product.price}  description={product.description} image={product.image}/> 
+    <Card key={product.title}  title={product.title} price={product.price}  description={product.description} image={product.image}/> 
   ))
   }
 

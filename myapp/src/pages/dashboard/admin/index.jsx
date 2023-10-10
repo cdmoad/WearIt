@@ -10,25 +10,23 @@ import './index.css'
 
 function Index() {
  
-  const [toggleMenu,setToggleMenu]=useState(false);
+  const [toggleMenu,setToggleMenu]=useState(true);
  
-
-
 
   return (
-    <div className=" ">
+    <div className="">
  
       <SideMenu  toggleMenu={toggleMenu}  setToggleMenu={setToggleMenu} /> 
-  
-   
-      <div className='flex justify-between'>
-       
-       {toggleMenu ?  <div className='space-taker none md:block'></div> : null }
 
-        <div  className={`main-dashboard ${toggleMenu ? null : 'w-full' }  `} > 
+      <div className='flex justify-between'>
+
+       {toggleMenu ?  <div className='space-taker none md:block'></div> : null }
+ 
+         <div className={`main-dashboard ${toggleMenu ? null : 'w-full' }  `} > 
          <Header toggleMenu={toggleMenu}  setToggleMenu={setToggleMenu} />
          <div className="px-4 py-4 ">
-          <Routes>
+         <Routes>
+          
         <Route path="/users" element={ <Users/>} />   
         <Route path="/statistics" element={ <Statistics/>} />   
         <Route path="/*" element={<PageNotFound />} />  

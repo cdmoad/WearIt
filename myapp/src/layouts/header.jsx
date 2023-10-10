@@ -4,13 +4,25 @@ import {Link} from 'react-router-dom'
 import cart from "../assets/icons/cart.png"
 import { CartContext } from '../contexts/cartContext'
 import {motion,AnimatePresence} from 'framer-motion'
+import { isAuthenticated,clearSessionStorage } from '../utils/sessionStorage';
+import { useNavigate } from 'react-router-dom';
+
  
 
 function Header() {
 
+  const navigate=useNavigate()
+
   const { toggleCart } = useContext(CartContext);
 
   const [toggleSideNav, setToggleSideNav] = useState(false);
+
+
+ function logout(){
+ clearSessionStorage();
+ navigate("/")
+ }
+
 
   return (
 
@@ -94,14 +106,25 @@ function Header() {
           <div className="sm:flex sm:gap-4">  
           
           
-  
-            <Link to="/login">
+  {isAuthenticated() ? 
+    
+    <a
+    onClick={logout}
+      className="block rounded-md bg-custom-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-black cursor-pointer"
+    >
+     Logout
+    </a>
+    
+:
+  <Link to="/login">
             <a
               className="block rounded-md bg-custom-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-black"
             >
-              Login
+             Login
             </a>
             </Link>
+}    
+          
 
           
   <Link to="/signup">

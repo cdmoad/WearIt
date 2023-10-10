@@ -2,8 +2,21 @@ import React from 'react'
 import Chair from '../../assets/backgrounds/white-wooden-chair-with-autumn-c.jpg'
 import  logo from '../../../public/waerit-logo-transparent.png'
 import { Link } from 'react-router-dom'
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import {validationSchema} from "../../validation/signup";
+import {register} from "../../api/auth/register"
 
 function Signup() {
+
+  const { handleSubmit, control, formState: { errors } } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
+  const onSubmit = (data) => {
+    register(data.name,data.email,data.password,data.password_confirmation)
+  };
+ 
   return (
   
   <section className="bg-white">
@@ -59,50 +72,37 @@ function Signup() {
             </p>
           </div>
   
-          <htmlForm action="#" className="mt-8 grid grid-cols-6 gap-6">
-            <div className="col-span-6 sm:col-span-3">
-              <label
-                htmlFor="FirstName"
-                className="block text-sm font-medium text-gray-700"
-              >
-                First Name
+          <form action="#" className="mt-8 grid grid-cols-6 gap-6" onSubmit={handleSubmit(onSubmit)}>
+ 
+  
+            <div className="col-span-6">
+              <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
+            Name
               </label>
   
-              <input
-                type="text"
-                id="FirstName"
-                name="first_name"
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"
-              />
+              <Controller
+          name="name"
+          control={control}
+          defaultValue=""
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your name" autofocus="" />
+ }
+        />
+        {errors.name && <p className='text-red-500 text-sm'>{errors.name.message}</p>}
             </div>
-  
-            <div className="col-span-6 sm:col-span-3">
-              <label
-                htmlFor="LastName"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Last Name
-              </label>
-  
-              <input
-                type="text"
-                id="LastName"
-                name="last_name"
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"
-              />
-            </div>
-  
             <div className="col-span-6">
               <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
                 Email
               </label>
   
-              <input
-                type="email"
-                id="Email"
-                name="email"
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"
-              />
+              <Controller
+          name="email"
+          control={control}
+          defaultValue=""
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your email" autofocus="" />
+ }
+        />
+        {errors.email && <p className='text-red-500 text-sm'>{errors.email.message}</p>}
+              
             </div>
   
             <div className="col-span-6 sm:col-span-3">
@@ -112,14 +112,15 @@ function Signup() {
               >
                 Password
               </label>
-  
-              <input
-                type="password"
-                id="Password"
-                name="password"
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"
-              />
-            </div>
+              <Controller
+          name="password"
+          control={control}
+          defaultValue=""
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your password" autofocus="" />
+ }
+        />
+        {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
+             </div>
   
             <div className="col-span-6 sm:col-span-3">
               <label
@@ -129,12 +130,14 @@ function Signup() {
                 Password Confirmation
               </label>
   
-              <input
-                type="password"
-                id="PasswordConfirmation"
-                name="password_confirmation"
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"
-              />
+              <Controller
+          name="password_confirmation"
+          control={control}
+          defaultValue=""
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your password confirmation" autofocus="" />
+ }
+        />
+        {errors.password_confirmation && <p className='text-red-500 text-sm'>{errors.password_confirmation.message}</p>}
             </div>
   
             <div className="col-span-6">
@@ -165,13 +168,14 @@ function Signup() {
             </div>
   
             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                <Link to="/">
+           
               <button
                 className="inline-block shrink-0 rounded-md border   bg-custom-black px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-custom-black focus:outline-none focus:ring "
+                type="submit"
               >
                 Create an account
               </button>
-              </Link>
+             
   
               <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                 Already have an account?
@@ -180,7 +184,7 @@ function Signup() {
                 </Link>
               </p>
             </div>
-          </htmlForm>
+          </form>
         </div>
       </main>
     </div>

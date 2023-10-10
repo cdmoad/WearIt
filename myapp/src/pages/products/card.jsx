@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Card({title, price, image,description}) {
   return (
     <li>
-    <a href="/productOverview" className="group block overflow-hidden">
+    <Link to="/product/10" className="group block overflow-hidden">
       <img
         src={image}
         alt=""
@@ -23,7 +24,7 @@ function Card({title, price, image,description}) {
           <span className="tracking-wider text-gray-900"> {price}DH </span>
         </p>
       </div>
-    </a>
+    </Link>
   </li>
   )
 }

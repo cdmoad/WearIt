@@ -3,6 +3,7 @@ import './App.css'
 import Home from './pages/home/home'
 import Route from './routes/routes'
 import { CartProvider } from './contexts/cartContext';
+import axios from 'axios';
 
 import {
   QueryClient,
@@ -12,6 +13,8 @@ import {
  const queryClient = new QueryClient()  
  import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
+
+ axios.defaults.baseURL = "http://127.0.0.1:8000/api/v1";
 
 function App() {
 

@@ -1,0 +1,17 @@
+.main-dashboard{
+     width: calc(100% - 256px);
+ }
+ 
+ @media (max-width: 767px) {
+     .main-dashboard {
+        width:  100%;
+     }
+   }
+ 
+ .space-taker{
+ width:256px;
+ height: 100vh;
+ 
+ 
+ 
+ }

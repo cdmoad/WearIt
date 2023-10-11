@@ -2,12 +2,17 @@ import React from 'react'
 import Cart from '../../components/cart/cart'
 import {useGetProduct} from '../../queries/productsQuery'
  import { useParams } from 'react-router-dom'
+ import Reviews from "../../components/reviews/index"
+import { useGetReviews } from '../../queries/reviewsQuery'
 
 function ProductOverview() {
 
   const {id}=useParams()
 
   const {data:product, isFetching, isError,isSuccess } = useGetProduct(id)
+
+  
+  const {data:reviews, isFetching:isFetchingReviews, isError:isErrorReviews,isSuccess:isSuccessReviews } = useGetReviews(id)
 
   
   return (
@@ -257,6 +262,20 @@ null
   </div>
 
   <Cart/> 
+
+{
+isFetchingReviews ? null :
+reviews?.map((review)=>{
+return(
+  <Reviews review={review.review} star={review.star} userName={review.user_name}  />
+  )
+})
+
+}
+
+  
+
+
    </>
   }
 

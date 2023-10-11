@@ -3,7 +3,7 @@ import { fetchProducts,getProduct } from '../api/products';
  
 
 export function useGetProducts() {
-  return useQuery(['products'],fetchProducts,{staleTime:20000});
+  return useQuery(['products'],fetchProducts,{staleTime:30000});
 }
 
  

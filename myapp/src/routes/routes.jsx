@@ -71,7 +71,7 @@ function Routing() {
           <Route path="/bestsellers" element={<WithHeader><BestSeller /></WithHeader>}></Route>
           <Route path="/about" element={<WithHeader><AboutUs /></WithHeader>}></Route>
           {/* Dashboard */}
-          <Route path="/dashboard/*" element={<DashboardAdmin/>}></Route>
+          <Route path="/dashboard/*" element={<DashboardSeller/>}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/*" element={<PageNotFound />} />

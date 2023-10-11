@@ -12,9 +12,12 @@ export async function fetchProducts() {
 
 
 export async function getProduct(id) {
+
+   
  
     try {
       const data = await axios.get(`/products/${id}`);
+      console.log(data.data.product.id);
       return data.data.product;
 
     } catch (error) {

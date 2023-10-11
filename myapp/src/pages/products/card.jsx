@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Card({title, price, image}) {
+function Card({id,title, price, image}) {
   return (
     <li>
-    <Link to="/product/10" className="group block overflow-hidden">
+    <Link to={`/product/${id}`} className="group block overflow-hidden">
       <img
         src={image}
         alt=""

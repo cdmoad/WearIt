@@ -6,29 +6,31 @@ import PageNotFound from '../../ErrorPages/pageNotFound'
 import Statistics from './statistics/statistics'
 import Header from './layout/header'
 import './index.css'
+import Products from './products/products'
 
 
 function Index() {
  
-  const [toggleMenu,setToggleMenu]=useState(true);
+ 
  
 
   return (
     <div className="">
  
-      <SideMenu  toggleMenu={toggleMenu}  setToggleMenu={setToggleMenu} /> 
+      <SideMenu   /> 
 
       <div className='flex justify-between'>
 
-       {toggleMenu ?  <div className='space-taker none md:block'></div> : null }
+         <div className='space-taker hidden md:block'></div>  
  
-         <div className={`main-dashboard ${toggleMenu ? null : 'w-full' }  `} > 
-         <Header toggleMenu={toggleMenu}  setToggleMenu={setToggleMenu} />
+         <div className="main-dashboard    "   > 
+         <Header   />
          <div className="px-4 py-4 ">
          <Routes>
           
         <Route path="/users" element={ <Users/>} />   
         <Route path="/statistics" element={ <Statistics/>} />   
+        <Route path="/products" element={ <Products/>} />   
         <Route path="/*" element={<PageNotFound />} />  
        </Routes>  
        </div> 

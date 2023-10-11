@@ -1,6 +1,8 @@
+import axios from "axios"
+
 export async function fetchUsers() {
     try {
-      const response = await fetch('http://localhost:3000/users');
+      const response = await axios.get('/users');
       const data = await response.json();
       return data;
 

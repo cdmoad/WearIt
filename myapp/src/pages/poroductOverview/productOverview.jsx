@@ -38,7 +38,7 @@ null
           </li>
   
           <li className="text-sm">
-            <a href="#" aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
+            <a href="#" aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">{product?.category_name}</a>
           </li>
         </ol>
       </nav>
@@ -100,9 +100,10 @@ null
             </div>
           </div>
   
-          <htmlForm className="mt-10">
+          <form className="mt-10">
  
             <div>
+              
               <h3 className="text-sm font-medium text-gray-900">Color</h3>
   
               <fieldset className="mt-4">
@@ -129,7 +130,8 @@ null
                 </div>
               </fieldset>
             </div>
-  
+
+
          
             <div className="mt-10">
               <div className="flex items-center justify-between">
@@ -157,6 +159,9 @@ null
                     
                     <span className="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
                   </label>
+
+                 
+ 
               
                   {/* <label className="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
                     <input type="radio" name="size-choice" value="XS" className="sr-only" aria-labelledby="size-choice-1-label" />
@@ -209,9 +214,11 @@ null
                 </div>
               </fieldset>
             </div>
+
+            <h3 className="text-sm font-medium text-gray-900 mt-10">Stock : {product?.stock}</h3>
   
             <button type="submit" className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-custom-black px-8 py-3 text-base font-medium text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">Add to bag</button>
-          </htmlForm>
+          </form>
         </div>
   
         <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
@@ -220,7 +227,7 @@ null
             <h3 className="sr-only">Description</h3>
   
             <div className="space-y-6">
-              <p className="text-base text-gray-900"> {product.description}</p>
+              <p className="text-base text-gray-900"> {product?.description}</p>
             </div>
           </div>
   

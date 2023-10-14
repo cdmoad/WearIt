@@ -11,7 +11,7 @@ import AddProduct from './products/addProduct'
 
 function Dashboard() {
   return (
-     <div className=" ">
+     <div className="bg-slate-50">
     
         <SideMenu/> 
    

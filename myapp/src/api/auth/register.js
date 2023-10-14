@@ -1,10 +1,10 @@
 import axios from "axios"
 
-export async function register(name,email,password,password_confirmation) {
+export async function register(name,email,password,password_confirmation,role) {
+ console.log(name,email,password,password_confirmation,role)
     try {
-      const response = await axios.post('/register',{name,email,password,password_confirmation});
-      const data = await response.json();
-    //   return data;
+      const data = await axios.post('/register',{name,email,password,password_confirmation,role_id:role});
+    
     console.log(data)
 
     } catch (error) {

@@ -15,6 +15,10 @@ export default {
         'third-color':'#FF9B82',
         'custom-red':'#e11d48',
     },
+    fontFamily:{
+      'custom-primary':['Poppins', 'sans-serif'],
+      'custom-secondary':['Roboto', 'sans-serif'],
+    }
     },
     
   },

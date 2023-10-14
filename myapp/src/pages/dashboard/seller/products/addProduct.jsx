@@ -27,14 +27,11 @@ const [categories, setCategories] = useState([]);
   const addProductMutation = useAddProduct();
     async function onSubmit (data) {
  
-    console.log('am here in component' );
-
     data.tags=tagList
     data.colors=colors
     data.sizes=sizes
     data.categories=categories
 
- 
     try {
       await addProductMutation.mutateAsync(data);
       console.log('Product added successfully');
@@ -190,58 +187,61 @@ const [categories, setCategories] = useState([]);
   
 
   return (
-    <div class="lg:m-10 ">
-  <form  onSubmit={handleSubmit(onSubmit)} class="relative  border border-gray-100 space-y-3 max-w-screen mx-auto rounded-md bg-white p-6 shadow-md lg:p-10">
-  <h1 class="mb-6 text-xl font-semibold lg:text-2xl">Add Product</h1>
+    <>
 
-  <div class="grid gap-3 md:grid-cols-2">
+    <div className="lg:m-1 bg-white border border-gray-100 shadow-sm rounded-md" >
+     <h1 className="py-3 ml-5 text-base font-semibold lg:text-lg font-custom-secondary text-custom-black">Add Product</h1>
+  <hr/> 
+  <form  onSubmit={handleSubmit(onSubmit)} className="relative   space-y-3 max-w-screen mx-auto rounded-md  p-6  lg:p-10">
+ 
+  <div className="grid gap-3 md:grid-cols-2">
     <div> 
-      <label class=""> Title: </label>
+      <label className="font-custom-primary"> Title: </label>
       <Controller
           name="title"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text" class="mt-2 h-12 w-full rounded-md bg-gray-100 px-3"    placeholder="Enter Title" autofocus="" />
+          render={({ field }) =><input  {...field} type="text" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Title" autofocus="" />
    }
         />
         {errors.title && <p className='text-red-500 text-sm'>{errors.title.message}</p>}
     </div>
     <div>
-      <label class=""> Stock: </label>
+      <label className="font-custom-primary"> Stock: </label>
       <Controller
           name="stock"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="number" class="mt-2 h-12 w-full rounded-md bg-gray-100 px-3"    placeholder="Enter Stock" autofocus="" />
+          render={({ field }) =><input  {...field} type="number" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Stock" autofocus="" />
    }
         />
         {errors.stock && <p className='text-red-500 text-sm'>{errors.stock.message}</p>}
     </div>
   </div>
   <div>
-    <label class=""> Price: </label>
+    <label className="font-custom-primary"> Price: </label>
     <Controller
           name="price"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text" class="mt-2 h-12 w-full rounded-md bg-gray-100 px-3"    placeholder="Enter Price" autofocus="" />
+          render={({ field }) =><input  {...field} type="text" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Price" autofocus="" />
    }
         />
         {errors.price && <p className='text-red-500 text-sm'>{errors.title.price}</p>}
   </div>
   <div>
-    <label class=""> Description: </label>
+    <label className="font-custom-primary"> Description: </label>
     <Controller
           name="description"
           control={control}
           defaultValue=""
-          render={({ field }) =><textarea  {...field} type="text"     class="mt-2 max-h-64 h-32  w-full rounded-md bg-gray-100 px-3 py-3"    placeholder="Enter Description" autofocus="" />
+          render={({ field }) =><textarea  {...field} type="text"     className="mt-2 max-h-64 h-32  w-full rounded-md border border-gray-200 px-3 py-3 outline-none"    placeholder="Enter Description" autofocus="" />
    }
         />
         {errors.description && <p className='text-red-500 text-sm'>{errors.description.message}</p>}
   </div>
   <div>
-    <label class=""> Category: </label>
+    <label className="font-custom-primary"> Category: </label>
     <Select
   
     // tagRender={tagRender}
@@ -255,9 +255,9 @@ const [categories, setCategories] = useState([]);
     onChange={(value)=>setCategories(value)}
   /> 
  </div>
-  <div class="grid gap-3 lg:grid-cols-2">
+  <div className="grid gap-3 lg:grid-cols-2">
     <div>
-      <label class=""> Colors: </label>
+      <label className="font-custom-primary"> Colors: </label>
       <Select
     mode="multiple"
     // tagRender={tagRender}
@@ -273,7 +273,7 @@ const [categories, setCategories] = useState([]);
   />
     </div>
     <div>
-      <label class=""> Sizes: </label>
+      <label className="font-custom-primary"> Sizes: </label>
       <Select
     mode="multiple"
     // tagRender={tagRender}
@@ -291,25 +291,25 @@ const [categories, setCategories] = useState([]);
   </div>
 
   <div className=''>
-      <label class=""> Tags: </label>
+      <label className="font-custom-primary"> Tags: </label>
       <input type="text"  ref={tagRef}
-        onKeyPress={addTag} placeholder="Enter Tags" class="mt-2 h-8 w-full border rounded-md bg-white  px-3" />
+        onKeyPress={addTag} placeholder="Enter Tags" className="mt-2 h-[30px] w-full border rounded-md   border-gray-200  px-3 outline-none" />
        <p className='  mt-1 mr-1    text-sm   '> <div className='text-base flex '>{tagList?.map((tag)=>{return(<div className='flex mr-1 bg-slate-100 py-0.5 px-2 w-fit   rounded-md '><div >#{tag}</div> <div className='text-base ml-1 hover:scale-110 cursor-pointer' onClick={()=>removeTag(tag)}> &times;</div></div>)})}</div>  </p>
   </div> 
    
  <div>
- <label class=""> Discount: <span class="text-sm text-gray-400">(optional)</span> </label>
+ <label className="font-custom-primary"> Discount: <span className="text-sm text-gray-400">(optional)</span> </label>
 <Controller
           name="discount"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="number" class="mt-2 h-12 w-full rounded-md bg-gray-100 px-3"    placeholder="Enter Discount" autofocus="" />
+          render={({ field }) =><input  {...field} type="number" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Discount" autofocus="" />
    }
         />      
     </div>
 
     <div className=''>
-      <label class=""> Images: </label>
+      <label className="font-custom-primary"> Images: </label>
       <style>
         {`
           .ant-image-crop {
@@ -335,12 +335,13 @@ const [categories, setCategories] = useState([]);
      
    </div> 
  
-  <div>
-    <button type="submit" class="mt-5 w-full rounded-md bg-custom-black p-2 text-center font-semibold text-white">Add Product</button>
+  <div className='flex justify-end'>
+    <button type="submit" className="mt-5 w-fit px-4   bg-custom-black p-2 text-center   border border-gray-200 font-custom-secondary text-white">Add Product</button>
   </div>
 </form>
 
 </div>
+</>
   )
 }
 

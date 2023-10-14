@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Chair from '../../assets/backgrounds/white-wooden-chair-with-autumn-c.jpg'
 import  logo from '../../../public/waerit-logo-transparent.png'
 import { Link } from 'react-router-dom'
@@ -6,15 +6,18 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {validationSchema} from "../../validation/signup";
 import {register} from "../../api/auth/register"
+import { Select } from 'antd';
 
 function Signup() {
+
+  const [role, setRole] = useState(3);
 
   const { handleSubmit, control, formState: { errors } } = useForm({
     resolver: yupResolver(validationSchema),
   });
 
   const onSubmit = (data) => {
-    register(data.name,data.email,data.password,data.password_confirmation)
+    register(data.name,data.email,data.password,data.password_confirmation,role)
   };
  
   return (
@@ -84,7 +87,7 @@ function Signup() {
           name="name"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your name" autofocus="" />
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md  border border-gray-200  text-sm text-gray-700   py-2 px-3 outline-none"   placeholder="Enter your name" autofocus="" />
  }
         />
         {errors.name && <p className='text-red-500 text-sm'>{errors.name.message}</p>}
@@ -98,7 +101,7 @@ function Signup() {
           name="email"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your email" autofocus="" />
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border border-gray-200  text-sm text-gray-700   py-2 px-3 outline-none"   placeholder="Enter your email" autofocus="" />
  }
         />
         {errors.email && <p className='text-red-500 text-sm'>{errors.email.message}</p>}
@@ -116,7 +119,7 @@ function Signup() {
           name="password"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your password" autofocus="" />
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border border-gray-200 text-sm text-gray-700   py-2 px-3 outline-none"   placeholder="Enter your password" autofocus="" />
  }
         />
         {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
@@ -134,11 +137,38 @@ function Signup() {
           name="password_confirmation"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-2 px-3 outline-none"   placeholder="Enter your password confirmation" autofocus="" />
+          render={({ field }) =><input  {...field} type="text"  className="mt-1 w-full rounded-md    border border-gray-200 text-sm text-gray-700   py-2 px-3 outline-none"   placeholder="Enter your password confirmation" autofocus="" />
  }
         />
         {errors.password_confirmation && <p className='text-red-500 text-sm'>{errors.password_confirmation.message}</p>}
             </div>
+
+            <div className="col-span-6 sm:col-span-3">
+            <label
+                htmlFor="role"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Role
+              </label>
+        <Select
+      defaultValue={3}
+      style={{
+        width: 120,
+      }}
+      onChange={(value)=>{setRole(value)}}
+      options={[
+        {
+          value: 2,
+          label: 'Seller',
+        },
+        {
+          value: 3,
+          label: 'Cient',
+        },
+      ]}
+    />
+  </div>
+              
   
             <div className="col-span-6">
               <label htmlFor="MarketingAccept" className="flex gap-4">
@@ -155,6 +185,8 @@ function Signup() {
                 </span>
               </label>
             </div>
+
+      
   
             <div className="col-span-6">
               <p className="text-sm text-gray-500">
@@ -170,7 +202,7 @@ function Signup() {
             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
            
               <button
-                className="inline-block shrink-0 rounded-md border   bg-custom-black px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-custom-black focus:outline-none focus:ring "
+                className="inline-block shrink-0   border   bg-custom-black px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-custom-black focus:outline-none focus:ring "
                 type="submit"
               >
                 Create an account

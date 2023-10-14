@@ -14,6 +14,29 @@ function ProductOverview() {
   
   const {data:reviews, isFetching:isFetchingReviews, isError:isErrorReviews,isSuccess:isSuccessReviews } = useGetReviews(id)
 
+
+  function generateColorClassName(color) {
+ 
+    const colorClassMap = {
+      red: 'bg-red-500',
+      blue: 'bg-blue-500',
+      green: 'bg-green-500',
+      yellow: 'bg-yellow-500',
+      purple: 'bg-purple-500',
+      indigo: 'bg-indigo-500',
+      white: 'bg-white',
+      black: 'bg-black',
+      oragne: 'bg-orange-500',
+      brown: 'bg-rose-950',
+      gray: 'bg-gray-500',
+      pink: 'bg-pink-500',
+
+    };
+  
+    const colorClass = colorClassMap[color] || 'bg-gray-400';  
+  
+    return `h-8 w-8 rounded-full border border-black border-opacity-10  ${colorClass}`;
+  }
   
   return (
     <>
@@ -114,24 +137,14 @@ null
               <fieldset className="mt-4">
                 <legend className="sr-only">Choose a color</legend>
                 <div className="flex items-center space-x-3">
-               
-                  <label className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400">
+               {product?.colors?.map((color) => (
+                <label className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400">
                     <input type="radio" name="color-choice" value="White" className="sr-only" aria-labelledby="color-choice-0-label" />
                     <span id="color-choice-0-label" className="sr-only">White</span>
-                    <span aria-hidden="true" className="h-8 w-8 bg-white rounded-full border border-black border-opacity-10"></span>
+                    <span aria-hidden="true"  className={generateColorClassName(color)}></span>
                   </label>
-                
-                  <label className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400">
-                    <input type="radio" name="color-choice" value="Gray" className="sr-only" aria-labelledby="color-choice-1-label" />
-                    <span id="color-choice-1-label" className="sr-only">Gray</span>
-                    <span aria-hidden="true" className="h-8 w-8 bg-gray-200 rounded-full border border-black border-opacity-10"></span>
-                  </label>
-                
-                  <label className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900">
-                    <input type="radio" name="color-choice" value="Black" className="sr-only" aria-labelledby="color-choice-2-label" />
-                    <span id="color-choice-2-label" className="sr-only">Black</span>
-                    <span aria-hidden="true" className="h-8 w-8 bg-gray-900 rounded-full border border-black border-opacity-10"></span>
-                  </label>
+              ))}
+                  
                 </div>
               </fieldset>
             </div>
@@ -158,13 +171,17 @@ null
                     </span>
                   </label>
 
-                  <label className="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
+{product?.size.map((size) => (
+
+    <label className="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6 cursor-pointer bg-white text-gray-900 shadow-sm">
                     <input type="radio" name="size-choice" value="S" className="sr-only" aria-labelledby="size-choice-2-label" />
-                    <span id="size-choice-2-label">{product?.size}</span>
+                    <span id="size-choice-2-label">{size}</span>
                     
                     <span className="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
                   </label>
 
+))}
+                
                  
  
               

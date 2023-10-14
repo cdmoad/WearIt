@@ -3,28 +3,44 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {validationSchema} from "../../../../validation/product"
 import { Select, Tag } from 'antd';
-import TextArea from 'antd/es/input/TextArea';
+import {useAddProduct} from "../../../../queries/productsQuery"
+import { Upload } from 'antd';
+import ImgCrop from 'antd-img-crop';
+import './style.css'
+ 
 
 
 function AddProduct() {
 
 const tagRef= useRef('')
 const [tagList,setTagList] = useState([])
+
+const [colors, setColors] = useState([]);
+const [sizes, setSizes] = useState([]);
+const [categories, setCategories] = useState([]);
+
     
   const { handleSubmit, control, formState: { errors } } = useForm({
     resolver: yupResolver(validationSchema),
   });
 
-
-  const onSubmit = (data) => {
+  const addProductMutation = useAddProduct();
+    async function onSubmit (data) {
  
-    console.log('am there');
-    console.log(data.title)
-    console.log(data.description)
-    console.log(data.price)
-    console.log(data.stock)
-    console.log(data.category)
-    console.log(data.discount)
+    console.log('am here in component' );
+
+    data.tags=tagList
+    data.colors=colors
+    data.sizes=sizes
+    data.categories=categories
+
+ 
+    try {
+      await addProductMutation.mutateAsync(data);
+      console.log('Product added successfully');
+    } catch (error) {
+      console.error('Error adding product:', error);
+    }
 
    };
 
@@ -124,11 +140,22 @@ const [tagList,setTagList] = useState([])
    
   ];
 
+  const categoryOptions = [
+    {
+      value: 'cat1',
+    },
+    {
+      value: 'cat2 ',
+    } 
+   
+  ];
+
+
 
   function addTag(event) {
 
-    if (event.key === 'Enter' && event.value!='') {
-      
+    if (event.key === 'Enter' && event.target.value!='') {
+      event.preventDefault()
       const tag = tagRef.current.value;
           setTagList([...tagList, tag])
           tagRef.current.value = ''
@@ -140,14 +167,36 @@ const [tagList,setTagList] = useState([])
     setTagList(tagList.filter((item) => item !== tag));
   }
 
+
+  const [fileList, setFileList] = useState([]);
+  const onChange = ({ fileList: newFileList }) => {
+    setFileList(newFileList);
+  };
+  const onPreview = async (file) => {
+    let src = file.url;
+    if (!src) {
+      src = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file.originFileObj);
+        reader.onload = () => resolve(reader.result);
+      });
+    }
+    const image = new Image();
+    image.src = src;
+    const imgWindow = window.open(src);
+    imgWindow?.document.write(image.outerHTML);
+  };
+ 
+  
+
   return (
-    <div class="lg:m-10  ">
-  <form onSubmit={handleSubmit(onSubmit)} class="relative border border-gray-100 space-y-3 max-w-screen-md mx-auto rounded-md bg-white p-6 shadow-md lg:p-10">
+    <div class="lg:m-10 ">
+  <form  onSubmit={handleSubmit(onSubmit)} class="relative  border border-gray-100 space-y-3 max-w-screen mx-auto rounded-md bg-white p-6 shadow-md lg:p-10">
   <h1 class="mb-6 text-xl font-semibold lg:text-2xl">Add Product</h1>
 
   <div class="grid gap-3 md:grid-cols-2">
     <div> 
-      <label class=""> Title </label>
+      <label class=""> Title: </label>
       <Controller
           name="title"
           control={control}
@@ -158,19 +207,19 @@ const [tagList,setTagList] = useState([])
         {errors.title && <p className='text-red-500 text-sm'>{errors.title.message}</p>}
     </div>
     <div>
-      <label class=""> Stock </label>
+      <label class=""> Stock: </label>
       <Controller
           name="stock"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text" class="mt-2 h-12 w-full rounded-md bg-gray-100 px-3"    placeholder="Enter Stock" autofocus="" />
+          render={({ field }) =><input  {...field} type="number" class="mt-2 h-12 w-full rounded-md bg-gray-100 px-3"    placeholder="Enter Stock" autofocus="" />
    }
         />
         {errors.stock && <p className='text-red-500 text-sm'>{errors.stock.message}</p>}
     </div>
   </div>
   <div>
-    <label class=""> Price </label>
+    <label class=""> Price: </label>
     <Controller
           name="price"
           control={control}
@@ -181,7 +230,7 @@ const [tagList,setTagList] = useState([])
         {errors.price && <p className='text-red-500 text-sm'>{errors.title.price}</p>}
   </div>
   <div>
-    <label class=""> Description </label>
+    <label class=""> Description: </label>
     <Controller
           name="description"
           control={control}
@@ -192,7 +241,7 @@ const [tagList,setTagList] = useState([])
         {errors.description && <p className='text-red-500 text-sm'>{errors.description.message}</p>}
   </div>
   <div>
-    <label class=""> Category </label>
+    <label class=""> Category: </label>
     <Select
   
     // tagRender={tagRender}
@@ -202,12 +251,13 @@ const [tagList,setTagList] = useState([])
       height:'32px',
       marginTop:'8px'
     }}
-    options={colorOptions}
+    options={categoryOptions}
+    onChange={(value)=>setCategories(value)}
   /> 
  </div>
   <div class="grid gap-3 lg:grid-cols-2">
     <div>
-      <label class=""> Color </label>
+      <label class=""> Colors: </label>
       <Select
     mode="multiple"
     // tagRender={tagRender}
@@ -218,10 +268,12 @@ const [tagList,setTagList] = useState([])
       marginTop:'8px'
     }}
     options={colorOptions}
+    onChange={(value)=>setColors(value)}
+     
   />
     </div>
     <div>
-      <label class=""> Size </label>
+      <label class=""> Sizes: </label>
       <Select
     mode="multiple"
     // tagRender={tagRender}
@@ -232,13 +284,14 @@ const [tagList,setTagList] = useState([])
       marginTop:'8px'
     }}
     options={sizeOptions}
+    onChange={(value)=>setSizes(value)}
   />
     </div>
     
   </div>
 
   <div className=''>
-      <label class=""> Tags </label>
+      <label class=""> Tags: </label>
       <input type="text"  ref={tagRef}
         onKeyPress={addTag} placeholder="Enter Tags" class="mt-2 h-8 w-full border rounded-md bg-white  px-3" />
        <p className='  mt-1 mr-1    text-sm   '> <div className='text-base flex '>{tagList?.map((tag)=>{return(<div className='flex mr-1 bg-slate-100 py-0.5 px-2 w-fit   rounded-md '><div >#{tag}</div> <div className='text-base ml-1 hover:scale-110 cursor-pointer' onClick={()=>removeTag(tag)}> &times;</div></div>)})}</div>  </p>
@@ -254,6 +307,33 @@ const [tagList,setTagList] = useState([])
    }
         />      
     </div>
+
+    <div className=''>
+      <label class=""> Images: </label>
+      <style>
+        {`
+          .ant-image-crop {
+            background-color: blue;
+          }
+        `}
+      </style>
+      <div className='mt-2 ' >
+         
+         <ImgCrop rotationSlider >
+         
+      <Upload
+        action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+        listType="picture-card"
+        fileList={fileList}
+        onChange={onChange}
+        onPreview={onPreview}
+      >
+        {fileList.length < 5 && '+ Upload'}
+      </Upload>
+    </ImgCrop>
+      </div>
+     
+   </div> 
  
   <div>
     <button type="submit" class="mt-5 w-full rounded-md bg-custom-black p-2 text-center font-semibold text-white">Add Product</button>
@@ -264,4 +344,5 @@ const [tagList,setTagList] = useState([])
   )
 }
 
+ 
 export default AddProduct

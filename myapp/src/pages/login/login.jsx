@@ -27,6 +27,8 @@ function Login() {
     saveToSessionStorage("token",res.access_token)
     saveToSessionStorage("name",res.user.name)
     saveToSessionStorage("email",res.user.email)
+    saveToSessionStorage("id",res.user.id)
+    
 
     navigate('/')
 

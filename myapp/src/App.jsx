@@ -4,6 +4,7 @@ import Home from './pages/home/home'
 import Route from './routes/routes'
 import { CartProvider } from './contexts/cartContext';
 import axios from 'axios';
+import { getFromSessionStorage } from './utils/sessionStorage';
 
 import {
   QueryClient,
@@ -15,6 +16,8 @@ import {
 
 
  axios.defaults.baseURL = "http://127.0.0.1:8000/api/v1";
+ axios.defaults.headers.common['Authorization'] =getFromSessionStorage("token")?`Bearer ${getFromSessionStorage("token")}`:null;
+ 
 
 function App() {
 

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 
+
 function Products() {
 
 
@@ -18,6 +19,10 @@ function Products() {
       const filteredProds = liveSearch(search,"title", products);
       setProds(filteredProds)
     }, [search]);
+
+
+
+   
 
   return (
     <div> 
@@ -121,7 +126,7 @@ function Products() {
         <span class="hidden lg:inline-block">Edit</span>
     </button>
     <button
-        class="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border-y border-slate-200 font-medium px-4 py-2 inline-flex space-x-1 items-center">
+        class="text-slate-800 hover:text-green-600 text-sm bg-white hover:bg-slate-100 border-y border-slate-200 font-medium px-4 py-2 inline-flex space-x-1 items-center">
         <span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-4 h-4">
@@ -133,7 +138,7 @@ function Products() {
         <span class="hidden lg:inline-block">View</span>
     </button>
     <button
-        class="text-slate-800 hover:text-blue-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-r-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
+        class="text-slate-800 hover:text-red-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-r-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
         <span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-4 h-4">

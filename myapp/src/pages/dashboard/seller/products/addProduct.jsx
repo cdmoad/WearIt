@@ -18,6 +18,7 @@ const [tagList,setTagList] = useState([])
 const [colors, setColors] = useState([]);
 const [sizes, setSizes] = useState([]);
 const [categories, setCategories] = useState([]);
+ 
 
     
   const { handleSubmit, control, formState: { errors } } = useForm({
@@ -31,6 +32,7 @@ const [categories, setCategories] = useState([]);
     data.colors=colors
     data.sizes=sizes
     data.categories=categories
+    data.images=fileList
 
     try {
       await addProductMutation.mutateAsync(data);
@@ -189,7 +191,7 @@ const [categories, setCategories] = useState([]);
   return (
     <>
 
-    <div className="lg:m-1 bg-white border border-gray-100 shadow-sm rounded-md" >
+    <div className="lg:m-1 bg-white border border-gray-100 shadow-sm  " >
      <h1 className="py-3 ml-5 text-base font-semibold lg:text-lg font-custom-secondary text-custom-black">Add Product</h1>
   <hr/> 
   <form  onSubmit={handleSubmit(onSubmit)} className="relative   space-y-3 max-w-screen mx-auto rounded-md  p-6  lg:p-10">
@@ -201,7 +203,7 @@ const [categories, setCategories] = useState([]);
           name="title"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Title" autofocus="" />
+          render={({ field }) =><input  {...field} type="text" className="mt-2 h-[35px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Title" autofocus="" />
    }
         />
         {errors.title && <p className='text-red-500 text-sm'>{errors.title.message}</p>}
@@ -212,7 +214,7 @@ const [categories, setCategories] = useState([]);
           name="stock"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="number" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Stock" autofocus="" />
+          render={({ field }) =><input  {...field} type="number" className="mt-2 h-[35px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Stock" autofocus="" />
    }
         />
         {errors.stock && <p className='text-red-500 text-sm'>{errors.stock.message}</p>}
@@ -224,7 +226,7 @@ const [categories, setCategories] = useState([]);
           name="price"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="text" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Price" autofocus="" />
+          render={({ field }) =><input  {...field} type="text" className="mt-2 h-[35px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Price" autofocus="" />
    }
         />
         {errors.price && <p className='text-red-500 text-sm'>{errors.title.price}</p>}
@@ -248,7 +250,7 @@ const [categories, setCategories] = useState([]);
     // defaultValue={['gold', 'cyan']}
     style={{
       width: '100%',
-      height:'32px',
+      height:'35px',
       marginTop:'8px'
     }}
     options={categoryOptions}
@@ -264,7 +266,7 @@ const [categories, setCategories] = useState([]);
     // defaultValue={['gold', 'cyan']}
     style={{
       width: '100%',
-      height:'32px',
+      height:'35px',
       marginTop:'8px'
     }}
     options={colorOptions}
@@ -280,7 +282,7 @@ const [categories, setCategories] = useState([]);
     // defaultValue={['gold', 'cyan']}
     style={{
       width: '100%',
-      height:'32px',
+      height:'35px',
       marginTop:'8px'
     }}
     options={sizeOptions}
@@ -293,7 +295,7 @@ const [categories, setCategories] = useState([]);
   <div className=''>
       <label className="font-custom-primary"> Tags: </label>
       <input type="text"  ref={tagRef}
-        onKeyPress={addTag} placeholder="Enter Tags" className="mt-2 h-[30px] w-full border rounded-md   border-gray-200  px-3 outline-none" />
+        onKeyPress={addTag} placeholder="Enter Tags" className="mt-2 h-[35px] w-full border rounded-md   border-gray-200  px-3 outline-none" />
        <p className='  mt-1 mr-1    text-sm   '> <div className='text-base flex '>{tagList?.map((tag)=>{return(<div className='flex mr-1 bg-slate-100 py-0.5 px-2 w-fit   rounded-md '><div >#{tag}</div> <div className='text-base ml-1 hover:scale-110 cursor-pointer' onClick={()=>removeTag(tag)}> &times;</div></div>)})}</div>  </p>
   </div> 
    
@@ -303,7 +305,7 @@ const [categories, setCategories] = useState([]);
           name="discount"
           control={control}
           defaultValue=""
-          render={({ field }) =><input  {...field} type="number" className="mt-2 h-[30px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Discount" autofocus="" />
+          render={({ field }) =><input  {...field} type="number" className="mt-2 h-[35px] w-full rounded-md border border-gray-200 px-3 outline-none"    placeholder="Enter Discount" autofocus="" />
    }
         />      
     </div>

@@ -7,7 +7,7 @@ function Header() {
     
     <header className="shadow-sm sticky top-0 z-50  bg-white  ">
       <div className=" z-100 bg-white w-full   flex max-w-screen-xl flex-col overflow-hidden px-4 py-2 sm:mx-auto sm:flex-row z-50">
-       <Link to="/"> <img className="h-10 w-12" src={logo} alt="" /></Link>
+       <Link to="/"> <img className="" width={50} height={50} src={logo} alt="" /></Link>
         <input type="checkbox" className="peer hidden" id="navbar-open" />
         <label   className="absolute right-4 top-5 cursor-pointer sm:hidden" for="navbar-open">
           <span className="sr-only">Toggle menu</span>

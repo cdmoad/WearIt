@@ -6,6 +6,8 @@ import {useGetProduct} from '../../queries/productsQuery'
 import { useGetReviews } from '../../queries/reviewsQuery'
 import { CartContext } from '../../contexts/cartContext'
 import {saveToSessionStorage} from '../../utils/sessionStorage'
+import AverageStars from './averageStars'
+import {getAverageReview} from '../../utils/calculations/reviews'
 
 function ProductOverview() {
 
@@ -120,25 +122,14 @@ null
             <h3 className="sr-only">Reviews</h3>
             <div className="flex items-center">
               <div className="flex items-center">
-                
-                <svg className="text-gray-900 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
-                </svg>
-                <svg className="text-gray-900 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
-                </svg>
-                <svg className="text-gray-900 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
-                </svg>
-                <svg className="text-gray-900 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
-                </svg>
-                <svg className="text-gray-200 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
-                </svg>
+
+               {/* Avergae Stars */}
+                <AverageStars stars={getAverageReview(reviews?.map((rev)=>rev?.star))}/>
+
               </div>
+              <div className='font-custom-primary ml-2 mt-1'>{getAverageReview(reviews?.map((rev)=>rev?.star))}</div>
               <p className="sr-only">4 out of 5 stars</p>
-              <a href="#" className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
+              <a href="#" className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">({reviews?.length} reviews)</a>
             </div>
           </div>
   
@@ -272,10 +263,11 @@ null
   
             <div className="mt-4">
               <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                <li className="text-gray-400"><span className="text-gray-600">Hand cut and sewn locally</span></li>
-                <li className="text-gray-400"><span className="text-gray-600">Dyed with our proprietary colors</span></li>
-                <li className="text-gray-400"><span className="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                <li className="text-gray-400"><span className="text-gray-600">Ultra-soft 100% cotton</span></li>
+                {
+                  product?.tages.map((tag, index) => (
+                    <li key={index} className="text-gray-400"><span className="text-gray-600">{tag}</span></li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -303,6 +295,8 @@ return(
 })
 
 }
+
+{reviews?.length === 0 ?  <div className='text-center font-custom-primary font-bold mb-6'>No Reviews Yet</div> : null }
 
   
 

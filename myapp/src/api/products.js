@@ -27,12 +27,9 @@ export async function getProduct(id) {
 
   }
 
-  export async function addProduct({title,stock,price,colors,sizes,categories,description,discount,tags}){
-  
-  
+  export async function addProduct({title,stock,price,colors,sizes,categories,description,discount,tags,images}){
 
-    console.log('am here in api');
-  
+    console.log('images:',images);
 
     try {
       const data = await axios.post(`/products`,{title,description,price,colors,sizes,stock,discount,tages:tags,user_id:getFromSessionStorage("id")});

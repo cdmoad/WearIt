@@ -13,7 +13,7 @@ export function useGetProduct(id) {
 }
 
 export function useAddProduct(data) {
-  console.log('am here in query');
+ 
   const queryClient = useQueryClient()
   
    return useMutation((data)=>addProduct(data), {

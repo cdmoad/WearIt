@@ -3,6 +3,8 @@ import { useGetProducts } from '../../../../queries/productsQuery'
 import { liveSearch } from '../../../../utils/liveSearch'
 import add from "../../../../assets/icons/add.svg"
 import { Link } from 'react-router-dom'
+import { Pagination } from 'antd';
+import Spinner from '../../../../components/Loader/spinner'
 
 
 
@@ -28,7 +30,7 @@ function Products() {
     <div> 
  
     <div className="mx-auto  max-w-screen-2xl ">
-      <div className="sm:flex sm:items-center sm:justify-between flex-col sm:flex-row sticky top-14 p-2 rounded-t-md border    bg-white border-bottom-none">
+      <div className="sm:flex sm:items-center sm:justify-between flex-col sm:flex-row sticky top-14 p-2 rounded-t-md border bg-white border-bottom-none">
     
       <div className="flex justify-start items-center z-[-1] mr-2">
         <form   className="max-w-[280px]  ">
@@ -73,6 +75,8 @@ function Products() {
       </div>
     
       <div className="border-top-none overflow-hidden rounded-b-xl border shadow bg-white">
+
+
         <table className="min-w-full border-separate border-spacing-y-2 border-spacing-x-2">
           <thead className="hidden border-b lg:table-header-group">
             <tr className="">
@@ -91,6 +95,9 @@ function Products() {
           </thead>
     
           <tbody className="lg:border-gray-300">
+
+                     
+
             {isSuccess ? (search ? prods : products)?.map((product)=>(
               <tr className="">
               
@@ -125,6 +132,7 @@ function Products() {
         </span>
         <span className="hidden lg:inline-block">Edit</span>
     </button>
+    <Link to={"/product/"+product.id}>
     <button
         className="text-slate-800 hover:text-green-600 text-sm bg-white hover:bg-slate-100 border-y border-slate-200 font-medium px-4 py-2 inline-flex space-x-1 items-center">
         <span>
@@ -137,6 +145,7 @@ function Products() {
         </span>
         <span className="hidden lg:inline-block">View</span>
     </button>
+    </Link>
     <button
         className="text-slate-800 hover:text-red-600 text-sm bg-white hover:bg-slate-100 border border-slate-200 rounded-r-lg font-medium px-4 py-2 inline-flex space-x-1 items-center">
         <span>
@@ -158,6 +167,14 @@ function Products() {
            
           </tbody>
         </table>
+        
+      {isFetching && <Spinner></Spinner> }  
+        <div className='p-5 flex justify-center'>
+          <div>
+            <Pagination defaultCurrent={1} total={50} />
+          </div>
+        </div>
+        
       </div>
     </div>
 

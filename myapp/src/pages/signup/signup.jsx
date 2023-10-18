@@ -7,10 +7,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import {validationSchema} from "../../validation/signup";
 import {register} from "../../api/auth/register"
 import { Select } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { saveToSessionStorage } from '../../utils/sessionStorage';
+
 
 function Signup() {
 
+  const navigate=useNavigate()
+
   const [role, setRole] = useState(3);
+  const [error,setError]=useState(null);
 
   const { handleSubmit, control, formState: { errors } } = useForm({
     resolver: yupResolver(validationSchema),
@@ -18,6 +24,22 @@ function Signup() {
 
   const onSubmit = (data) => {
     register(data.name,data.email,data.password,data.password_confirmation,role)
+     .then((res)=>{
+      if (res.error) {
+        setError(res.error);
+      } else {
+      saveToSessionStorage("token",res.access_token)
+      saveToSessionStorage("name",res.user.name)
+      saveToSessionStorage("email",res.user.email)
+      saveToSessionStorage("id",res.user.id)
+  
+      navigate('/')
+  
+      }
+    }
+      ).catch((err)=>{
+        console.log(err)
+      })
   };
  
   return (

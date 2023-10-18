@@ -3,8 +3,8 @@ import React from 'react'
 function Spinner() {
   return (
     <> 
-     <div className="absolute right-1/2 bottom-1/2  transhtmlForm translate-x-1/2 translate-y-1/2 ">
-     <div className="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-64 w-64"></div>
+     <div className="w-100 flex justify-center align-middle ">
+     <div className="border-t-transparent border-solid animate-spin  rounded-full border-custom-black border-4 h-10 w-10  my-4"></div>
      </div>
     </>
   
